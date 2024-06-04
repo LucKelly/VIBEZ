@@ -10,9 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_162808) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_165747) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bar_subvibes", force: :cascade do |t|
+    t.bigint "subvibe_id", null: false
+    t.bigint "bar_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_bar_subvibes_on_bar_id"
+    t.index ["subvibe_id"], name: "index_bar_subvibes_on_subvibe_id"
+  end
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.string "price"
+    t.datetime "opening_time"
+    t.datetime "closing_time"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.text "note"
+    t.bigint "user_id", null: false
+    t.bigint "bar_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_favourites_on_bar_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "subvibes", force: :cascade do |t|
+    t.string "name"
+    t.string "main_vibe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_subvibes", force: :cascade do |t|
+    t.bigint "subvibe_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subvibe_id"], name: "index_user_subvibes_on_subvibe_id"
+    t.index ["user_id"], name: "index_user_subvibes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +68,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_162808) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bar_subvibes", "bars"
+  add_foreign_key "bar_subvibes", "subvibes"
+  add_foreign_key "favourites", "bars"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "user_subvibes", "subvibes"
+  add_foreign_key "user_subvibes", "users"
 end
