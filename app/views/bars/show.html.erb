@@ -1,5 +1,7 @@
-<div class="bar-show-height d-flex flex-column text-center align-items-center justify-content-center py-4">
-  <div class="">
-    <%= @bar.name %>
-  </div>
+<div class="pink-purple-gradient vh-100 text-white d-flex flex-column text-center align-items-center justify-content-center py-4">
+    <h2><%= @bar.name %></h2>
+    <div class="d-flex gap-3">
+      <p><%= @bar.price %></p>
+      <p>Closes at <%= @bar.closing_time %> hours</p>
+    </div>
 </div>
