@@ -4,3 +4,5 @@ class Bar < ApplicationRecord
   has_many :subvibes, through: :bar_subvibes
   has_many :users, through: :favourites
 end
+
+
