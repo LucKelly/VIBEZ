@@ -1,3 +1,41 @@
 .bar-show-height {
   height: calc(100% - 56px);
 }
+
+.pink-purple-gradient {
+  background: linear-gradient(180deg, #3D2148 0%, #E2A0B0 100%);
+}
+
+.grid-subvibes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 20px;
+  gap: 16px;
+}
+
+.button-{
+
+}
+
+.avatar-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.icon-img {
+  font-size: 40px;
+}
+
+.icon-card {
+  background-color: rgba(230, 230, 230, 0.5);
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
