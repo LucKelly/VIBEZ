@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_142141) do
   create_table "bars", force: :cascade do |t|
     t.string "name", null: false
     t.string "price"
-    t.datetime "opening_time"
-    t.datetime "closing_time"
+    t.integer "opening_time"
+    t.integer "closing_time"
     t.float "latitude", null: false
     t.float "longitude", null: false
     t.datetime "created_at", null: false

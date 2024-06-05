@@ -8,9 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts 'Destroying all existing records to start from a clean state'
-# Bar.destroy_all
-# Subvibe.destroy_all
-# User.destroy_all
+Bar.destroy_all
+Subvibe.destroy_all
+User.destroy_all
+BarSubvibe.destroy_all
 # add dependent_destroys to models so that the dependents also get deleted
 
 
@@ -26,7 +27,7 @@ puts 'Creating 5 outside subvibes'
 @outside_trendy = Subvibe.create!(name: "outside trendy", main_vibe: "trendy")
 @outside_boogie = Subvibe.create!(name: "outside boogie", main_vibe: "boogie")
 @outside_intimate = Subvibe.create!(name: "outside intimate", main_vibe: "intimate")
-@outside_pub = Subvibe.create!(name: "outside pub", main_vibe: "trendy")
+@outside_pub = Subvibe.create!(name: "outside pub", main_vibe: "pub")
 @outside_sports = Subvibe.create!(name: "outside sports", main_vibe: "sports")
 
 
@@ -134,12 +135,12 @@ puts 'Creating 5 western subvibes'
 @western_sports = Subvibe.create!(name: "western sports", main_vibe: "sports")
 
 
-puts 'Creating 5 western subvibes'
-@western_boogie = Subvibe.create!(name: "western boogie", main_vibe: "boogie")
-@western_intimate = Subvibe.create!(name: "western intimate", main_vibe: "intimate")
-@western_trendy = Subvibe.create!(name: "western trendy", main_vibe: "trendy")
-@western_pub = Subvibe.create!(name: "western pub", main_vibe: "pub")
-@western_sports = Subvibe.create!(name: "western sports", main_vibe: "sports")
+puts 'Creating 5 kareoke subvibes'
+@kareoke_boogie = Subvibe.create!(name: "kareoke boogie", main_vibe: "boogie")
+@kareoke_intimate = Subvibe.create!(name: "kareoke intimate", main_vibe: "intimate")
+@kareoke_trendy = Subvibe.create!(name: "kareoke trendy", main_vibe: "trendy")
+@kareoke_pub = Subvibe.create!(name: "kareoke pub", main_vibe: "pub")
+@kareoke_sports = Subvibe.create!(name: "kareoke sports", main_vibe: "sports")
 
 
 # how do we seed the opening/closing times and the latitude/longitude
@@ -168,5 +169,13 @@ puts 'Creating 20 bars'
 @pavilhao = Bar.create!(name: "pavilhao", price: "€", opening_time: 11, closing_time: 20, latitude: 1.5, longitude: 1.5)
 @rio_maravilha = Bar.create!(name: "rio_maravilha", price: "€", opening_time: 11, closing_time: 20, latitude: 1.5, longitude: 1.5)
 
+
+
+puts 'Creating 5 bar subvibes'
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @games_boogie)
+BarSubvibe.create!(bar: @oasis, subvibe: @kareoke_boogie)
+BarSubvibe.create!(bar: @copacabana, subvibe: @tapas_boogie)
+BarSubvibe.create!(bar: @boa_vista, subvibe: @DJ_music_boogie)
+BarSubvibe.create!(bar: @java, subvibe: @pints_pub)
 
 puts 'Done!'
