@@ -17,6 +17,7 @@ BarSubvibe.destroy_all
 
 puts 'Creating 5 users'
 @luc = User.create!(username: "Luc123", email: "luc@test.com", password: "password")
+@luc.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603849/sneaky_sip_nforib.jpg'), filename: 'sneakysip.jpg')
 @feline = User.create!(username: "Feline123", email: "feline@test.com", password: "password")
 @aureo = User.create!(username: "Aureo123", email: "aureo@test.com", password: "password")
 @jonas = User.create!(username: "Jonas123", email: "jonas@test.com", password: "password")
@@ -148,10 +149,15 @@ puts 'Creating 5 kareoke subvibes'
 
 puts 'Creating 20 bars'
 @sneaky_sip = Bar.create!(name: "sneaky_sip", price: "€", opening_time: 11, closing_time: 20, address: "R. Gustavo de Matos Sequeira 42A, 1250-120 Lisboa")
+@sneaky_sip.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603849/sneaky_sip_nforib.jpg'), filename: 'sneakysip.jpg')
 @oasis = Bar.create!(name: "oasis", price: "€", opening_time: 11, closing_time: 20, address: "R. Nova do Carvalho 48, 1200-372 Lisboa")
+@oasis.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717604000/oasis_yqkwa6.jpg'), filename: 'oasis.jpg')
 @copacabana = Bar.create!(name: "copacabana", price: "€", opening_time: 11, closing_time: 20, address: "R. da Atalaia 91, 1200-043 Lisboa")
+@copacabana.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603789/cpacabana_fwogya.jpg'), filename: 'copacabana.jpg')
 @boa_vista = Bar.create!(name: "boa_vista", price: "€", opening_time: 11, closing_time: 20, address: "Rua da Boavista 16, 1200-275 Lisboa")
+# @boa_vista.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603655/boa_vista_inanou.jpg'), filename: 'boavista.jpg')
 @java = Bar.create!(name: "java", price: "€", opening_time: 11, closing_time: 20, address: "Praça Dom Luís I 30, 1200-275 Lisboa")
+# @java.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603818/java_mokkhc.jpg  '), filename: 'java.jpg')
 @red_frog = Bar.create!(name: "red_frog", price: "€", opening_time: 11, closing_time: 20, address: "Praça da Alegria 66b, 1250-004 Lisboa")
 @cinco = Bar.create!(name: "cinco", price: "€", opening_time: 11, closing_time: 20, address: "R. Ruben A. Leitão 17A, 1200-392 Lisboa")
 @secret_garden = Bar.create!(name: "secret_garden", price: "€", opening_time: 11, closing_time: 20, address: "Largo Monte, 1170-253 Lisboa")

@@ -1,4 +1,5 @@
 class Bar < ApplicationRecord
+  has_one_attached :photo
   has_many :favourites, dependent: :destroy
   has_many :bar_subvibes, dependent: :destroy
   has_many :subvibes, through: :bar_subvibes
