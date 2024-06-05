@@ -1,5 +1,5 @@
-<div class="d-flex text-center items-center justify-content-center">
-  <div class="session-container">
+<div class=" session-container d-flex flex-column justify-content-center align-items-center gap-2 text-center">
+  <div class="session-container d-flex flex-column justify-content-center align-items-center gap-2 text-center">
     <h2>Sign up</h2>
     <br>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -23,8 +23,8 @@
     </div>
 
     <div class="form-actions d-flex justify-content-center gap-3">
-        <button href="#" class="btn btn-outline-primary"><%= f.button :submit, "Sign up" %>
-        <button href="#" class="btn btn-outline-primary"> <%= link_to "Back", root_path %> </button>
+        <button href="#" class="btn btn-light"><%= f.button :submit, "Sign up" %>
+        <button href="#" class="btn btn-light"> <%= link_to "Back", root_path %> </button>
       </div>
     <% end %>
   </div>
