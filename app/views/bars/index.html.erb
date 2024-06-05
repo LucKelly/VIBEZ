@@ -5,3 +5,31 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'boogie'
+        %>
+      <%= submit_tag "Boggie", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'pub'
+        %>
+      <%= submit_tag "Pub", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<%= @bars.count %>
