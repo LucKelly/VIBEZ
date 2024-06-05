@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_165747) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_04_142141) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,12 +24,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_165747) do
   end
 
   create_table "bars", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "price"
     t.datetime "opening_time"
     t.datetime "closing_time"
-    t.float "latitude"
-    t.float "longitude"
+    t.float "latitude", null: false
+    t.float "longitude", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,8 +45,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_165747) do
   end
 
   create_table "subvibes", force: :cascade do |t|
-    t.string "name"
-    t.string "main_vibe"
+    t.string "name", null: false
+    t.string "main_vibe", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_165747) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
+    t.string "username", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
