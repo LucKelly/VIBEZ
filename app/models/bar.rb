@@ -1,13 +1,9 @@
 class Bar < ApplicationRecord
-  has_many :favourites
-  has_many :bar_subvibes
+  has_many :favourites, dependent: :destroy
+  has_many :bar_subvibes, dependent: :destroy
   has_many :subvibes, through: :bar_subvibes
   has_many :users, through: :favourites
-
-  validates :name, presence: true
-  validates :longitude, presence: true
-  validates :latitude, presence: true
-  validates :user_name, presence: true
-
-
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+  validates :name, presence: true, uniqueness: true
 end
