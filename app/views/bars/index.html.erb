@@ -6,30 +6,51 @@
   </div>
 </div>
 
-
-
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
+<%# PLEASE DON'T MESS WITH, FRAGILE BUTTON FILTERS <3 %>
+<div class="filters-container">
+  <div class="filter-form">
     <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
       <%= hidden_field_tag :query,
             params[:query],
             value: 'boogie'
         %>
-      <%= submit_tag "Boggie", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Boggie", name: "", class: "btn btn-filter" %>
     <% end %>
   </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'intimate'
+        %>
+      <%= submit_tag "Intimate", class: "btn btn-filter" %>
+    <% end %>
+  </div>
+  <div class="filter-form">
     <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
       <%= hidden_field_tag :query,
             params[:query],
             value: 'pub'
         %>
-      <%= submit_tag "Pub", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Pub", name: "", class: "btn btn-filter" %>
+    <% end %>
+  </div>
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'sports'
+        %>
+      <%= submit_tag "Sports", name: "", class: "btn btn-filter" %>
+    <% end %>
+  </div>
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'trendy'
+        %>
+      <%= submit_tag "Trendy", name: "", class: "btn btn-filter" %>
     <% end %>
   </div>
 </div>
-
-<%= @bars.count %>
