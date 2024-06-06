@@ -1,6 +1,11 @@
 class BarsController < ApplicationController
   def index
     if params[:query].present?
+      @current_params = params[:query]
+      
+
+
+
       @bars = []
       Bar.all.each do |bar|
         bar.main_vibes.include?(params[:query]) ? @bars << bar : nil
@@ -18,6 +23,7 @@ class BarsController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+    @random_bar = Bar.order("RANDOM()").first
   end
 
   def show
