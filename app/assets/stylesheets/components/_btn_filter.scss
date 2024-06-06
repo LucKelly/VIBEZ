@@ -1,0 +1,50 @@
+.btn-filter {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: white;
+  border: none;
+  padding: 2.5px 5px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #3D2148;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.selected {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #3D2148;
+  border: none;
+  padding: 2.5px 5px;
+  border-radius: 10px;
+}
+
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.btn-chaos {
+  background-color: rgba(255, 255, 255, 0.8);
+    color: #3D2148;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    z-index: 9;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+}

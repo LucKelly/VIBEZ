@@ -282,12 +282,9 @@ puts 'Creating 20 bars'
 
 
 
-puts 'Creating 9 bar subvibes and 5 favourites'
-BarSubvibe.create!(bar: @sneaky_sip, subvibe: @games_boogie)
-BarSubvibe.create!(bar: @sneaky_sip, subvibe: @kareoke_boogie)
-BarSubvibe.create!(bar: @sneaky_sip, subvibe: @dancefloor_trendy)
-BarSubvibe.create!(bar: @sneaky_sip, subvibe: @DJ_music_trendy)
-BarSubvibe.create!(bar: @sneaky_sip, subvibe: @seating_pub)
+
+puts 'Creating 15 bar subvibes and 5 favourites'
+
 Favourite.create!(bar:@sneaky_sip,user:@luc)
 Favourite.create!(bar:@sneaky_sip,user:@feline)
 Favourite.create!(bar:@sneaky_sip,user:@aureo)
@@ -297,5 +294,15 @@ BarSubvibe.create!(bar: @oasis, subvibe: @kareoke_boogie)
 BarSubvibe.create!(bar: @copacabana, subvibe: @tapas_boogie)
 BarSubvibe.create!(bar: @boa_vista, subvibe: @DJ_music_boogie)
 BarSubvibe.create!(bar: @java, subvibe: @pints_pub)
+BarSubvibe.create!(bar: @red_frog, subvibe: @ambient_music_trendy)
+BarSubvibe.create!(bar: @cinco, subvibe: @live_music_boogie)
+BarSubvibe.create!(bar: @secret_garden, subvibe: @cocktails_intimate)
+BarSubvibe.create!(bar: @uni_cocktail, subvibe: @tropical_intimate)
+BarSubvibe.create!(bar: @park_bar, subvibe: @seating_intimate)
+BarSubvibe.create!(bar: @the_couch, subvibe: @dancefloor_trendy)
+BarSubvibe.create!(bar: @lisboario, subvibe: @western_trendy)
+BarSubvibe.create!(bar: @ogilins_irish_pub, subvibe: @tapas_sports)
+BarSubvibe.create!(bar: @british_bar_lisboa, subvibe: @kareoke_sports)
+BarSubvibe.create!(bar: @the_queen_ale, subvibe: @games_pub)
 
 puts 'Done!'
