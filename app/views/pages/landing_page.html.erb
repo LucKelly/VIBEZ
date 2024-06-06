@@ -1,5 +1,5 @@
 <div class="landing-container d-flex flex-column justify-content-center align-items-center gap-3 text-center">
-    <h1>VIBEZ</h1>
+    <h1 class="title_landing">VIBEZ</h1>
     <div class="sun-div">
       <%= image_tag("001-sun", class: "icon-picture") %>
     </div>
@@ -46,8 +46,10 @@
       <%= image_tag("015-romantic-music", class: "icon-picture") %>
   </div>
   <div class="d-flex flex-column gap-3">
-    <p>Description of Vibez</p>
-    <%= link_to "Log in", new_user_session_path, class: "btn btn-light" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
+    <div class= "D-Controller">
+      <p>Description of Vibez</p>
+    </div>
+    <%= link_to "Log in", new_user_session_path, class: "button-landing-page" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "button-landing-page" %>
   </div>
 </div>

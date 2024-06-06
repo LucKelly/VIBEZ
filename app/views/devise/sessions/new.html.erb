@@ -1,6 +1,6 @@
 <div class="session-container">
   <div class="session-container d-flex flex-column justify-content-center align-items-center gap-2 text-center">
-    <h2>Log in</h2>
+    <h2 class="header-log-in">Log in</h2>
     <br>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -11,16 +11,16 @@
         <%= f.input :email,
                     required: false,
                     autofocus: true,
-                    input_html: { autocomplete: "email" } %>
+                    input_html: { autocomplete: "email", class: "transparent-input" } %>
         <%= f.input :password,
                     required: false,
-                    input_html: { autocomplete: "current-password" } %>
+                    input_html: { autocomplete: "current-password", class: "transparent-input" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
       <div class="form-actions d-flex justify-content-center gap-3">
-        <button href="#" class="btn btn-light"> <%= f.button :submit, "Log in" %>
-        <button href="#" class="btn btn-light"> <%= link_to "Back", root_path %> </button>
+        <button href="#" class="button-log-in"> <%= f.button :submit, "Log in" %>
+        <button href="#" class="button-log-in"> <%= link_to "Back", root_path %> </button>
       </div>
     <% end %>
   </div>
