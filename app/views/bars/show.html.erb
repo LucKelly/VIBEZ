@@ -11,7 +11,7 @@
       <div class="text-start">
         <h2 class="bar-header-text"><%= @bar.name %></h2>
         <p><%= @bar.price %></p>
-        <p>Closes at <%= @bar.closing_time %> hours</p>
+        <p>Closes at <%= @bar.closing_time %>h</p>
       </div>
       <div>
         <i class="fa-regular fa-bookmark fa-2x"></i>
@@ -42,7 +42,7 @@
           <% @bar.users.each do |user| %>
             <div class="avatar-card">
               <%= cl_image_tag user.photo.key, class: "avatar-img" %>
-              <%= link_to user.username, root_path %>
+              <%= link_to user.username, user_path(user.id) %>
             </div>
           <% end %>
         </div>
@@ -51,5 +51,5 @@
       <% end %>
     </div>
 
-  <div type="button" class="btn btn-light redirect-button-margin">Letz Find your vibe</div>
+  <div type="button" class="button-landing-page redirect-button-margin">Take me there!</div>
 </div>

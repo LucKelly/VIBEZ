@@ -283,7 +283,7 @@ puts 'Creating 20 bars'
 
 
 
-puts 'Creating 15 bar subvibes and 5 favourites'
+puts 'Creating 18 bar subvibes, 5 user subvibes for Luc and 5 favourites for sneaky_sip'
 
 Favourite.create!(bar:@sneaky_sip,user:@luc)
 Favourite.create!(bar:@sneaky_sip,user:@feline)
@@ -304,5 +304,14 @@ BarSubvibe.create!(bar: @lisboario, subvibe: @western_trendy)
 BarSubvibe.create!(bar: @ogilins_irish_pub, subvibe: @tapas_sports)
 BarSubvibe.create!(bar: @british_bar_lisboa, subvibe: @kareoke_sports)
 BarSubvibe.create!(bar: @the_queen_ale, subvibe: @games_pub)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @DJ_music_boogie)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @tropical_intimate)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @tapas_sports)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @dancefloor_trendy)
+UserSubvibe.create!(user:@luc,subvibe:@kareoke_boogie)
+UserSubvibe.create!(user:@luc,subvibe:@cocktails_intimate)
+UserSubvibe.create!(user:@luc,subvibe:@dancefloor_trendy)
+UserSubvibe.create!(user:@luc,subvibe:@games_pub)
+UserSubvibe.create!(user:@luc,subvibe:@pints_pub)
 
 puts 'Done!'

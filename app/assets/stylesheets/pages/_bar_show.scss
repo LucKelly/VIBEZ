@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px 10px 0px 10px;
+  background: linear-gradient(180deg, #3D2148 0%, #E2A0B0 100%);
   color: white;
 }
 
@@ -13,7 +14,7 @@
 }
 
 .pink-purple-gradient {
-  background: linear-gradient(180deg, #3D2148 0%, #E2A0B0 100%);
+  // background: linear-gradient(180deg, #3D2148 0%, #E2A0B0 100%);
 }
 
 .grid-subvibes-style {
@@ -47,6 +48,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .avatar-img {
@@ -63,13 +65,15 @@
 
 .icon-card {
   background-color: rgba(230, 230, 230, 0.5);
-  border-radius: 50%;
+  border-radius: 10%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
+
 
 .height-minus-navbar {
   position: absolute;
@@ -83,6 +87,8 @@
 .bar-header-text {
   font-weight: bold;
 }
+
+
 
 // .dumb-body-fix {
 //   margin-top: 50px;
