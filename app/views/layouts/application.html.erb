@@ -11,9 +11,9 @@
   </head>
 
   <body class="vw-100 min-vh-100 pink-purple-gradient dumb-body-fix">
-  <% unless controller_name == "pages" && action_name == "landing_page"  %>
+  <%# if u want more than 1 page <% unless controller_name == "pages" && action_name == "landing_page" || controller_name == "bars" && action_name == "index"%>
+  <% unless controller_name == "pages" && action_name == "landing_page"%>
       <%= render "shared/navbar" %>
-
    <%end %>
     <%= render "shared/flashes" %>
     <%= yield %>
