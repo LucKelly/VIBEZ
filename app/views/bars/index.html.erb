@@ -8,13 +8,13 @@
 
 <%# PLEASE DON'T MESS WITH, FRAGILE BUTTON FILTERS <3 %>
 <div class="filters-container">
-  <div class="filter-form">
+  <div class="filter-form" data-controller="filter-button" data-action="click->filter-button#select" data-button-param-value="boogie">
     <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
       <%= hidden_field_tag :query,
             params[:query],
             value: 'boogie'
         %>
-      <%= submit_tag "Boggie", name: "", class: "btn btn-filter" %>
+      <%= submit_tag "Boogie", name: "", class: "btn btn-filter" %>
     <% end %>
   </div>
   <div class="filter-form">

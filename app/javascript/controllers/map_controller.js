@@ -23,7 +23,7 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {
 
       const customMarker = document.createElement("a")
-      // customMarker.setAttribute("href", `/bars/${marker.id}`)
+      customMarker.setAttribute("href", `/bars/${marker.id}`)
       customMarker.innerHTML = marker.marker_html
 
       new mapboxgl.Marker(customMarker)

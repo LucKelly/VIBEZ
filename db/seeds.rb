@@ -170,11 +170,21 @@ puts 'Creating 20 bars'
 
 
 
-puts 'Creating 5 bar subvibes'
+puts 'Creating 15 bar subvibes'
 BarSubvibe.create!(bar: @sneaky_sip, subvibe: @games_boogie)
 BarSubvibe.create!(bar: @oasis, subvibe: @kareoke_boogie)
 BarSubvibe.create!(bar: @copacabana, subvibe: @tapas_boogie)
 BarSubvibe.create!(bar: @boa_vista, subvibe: @DJ_music_boogie)
 BarSubvibe.create!(bar: @java, subvibe: @pints_pub)
+BarSubvibe.create!(bar: @red_frog, subvibe: @ambient_music_trendy)
+BarSubvibe.create!(bar: @cinco, subvibe: @live_music_boogie)
+BarSubvibe.create!(bar: @secret_garden, subvibe: @cocktails_intimate)
+BarSubvibe.create!(bar: @uni_cocktail, subvibe: @tropical_intimate)
+BarSubvibe.create!(bar: @park_bar, subvibe: @seating_intimate)
+BarSubvibe.create!(bar: @the_couch, subvibe: @dancefloor_trendy)
+BarSubvibe.create!(bar: @lisboario, subvibe: @western_trendy)
+BarSubvibe.create!(bar: @ogilins_irish_pub, subvibe: @tapas_sports)
+BarSubvibe.create!(bar: @british_bar_lisboa, subvibe: @kareoke_sports)
+BarSubvibe.create!(bar: @the_queen_ale, subvibe: @games_pub)
 
 puts 'Done!'
