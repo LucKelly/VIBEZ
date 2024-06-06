@@ -1,4 +1,5 @@
 class BarsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   def index
     @bars = Bar.all.geocoded
     @markers = @bars.map do |bar|
@@ -9,5 +10,9 @@ class BarsController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
+  end
+
+  def show
+    @bar = Bar.find(params[:id])
   end
 end
