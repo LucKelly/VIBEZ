@@ -1,4 +1,5 @@
 class Subvibe < ApplicationRecord
+  has_one_attached :photo
   has_many :bar_subvibes, dependent: :destroy
   has_many :user_subvibes, dependent: :destroy
   has_many :bars, through: :bar_subvibes
