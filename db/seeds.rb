@@ -170,7 +170,7 @@ puts 'Creating 20 bars'
 
 
 
-puts 'Creating 5 bar subvibes'
+puts 'Creating 9 bar subvibes and 5 favourites'
 BarSubvibe.create!(bar: @sneaky_sip, subvibe: @games_boogie)
 BarSubvibe.create!(bar: @sneaky_sip, subvibe: @kareoke_boogie)
 BarSubvibe.create!(bar: @sneaky_sip, subvibe: @dancefloor_trendy)
