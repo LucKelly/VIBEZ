@@ -1,9 +1,18 @@
-<div class="pink-purple-gradient vh-100 text-white d-flex flex-column text-center align-items-center justify-content-center py-4">
-    <h2><%= @bar.name %></h2>
-    <div class="gap-3">
-      <p><%= @bar.price %></p>
-      <p>Closes at <%= @bar.closing_time %> hours</p>
-      <h3>vibez</h3>
+<div class="vw-100 height-minus-navbar h-100 text-white d-flex flex-column text-center align-items-center justify-content-center pb-4 px-4">
+
+    <div class="d-flex gap-3 align-items-center justify-content-between w-100 py-4">
+      <div class="text-start">
+        <h2><%= @bar.name %></h2>
+        <p><%= @bar.price %></p>
+        <p>Closes at <%= @bar.closing_time %> hours</p>
+      </div>
+      <div>
+        <i class="fa-regular fa-bookmark"></i>
+      </div>
+    </div>
+
+    <h3><%= @bar.name %>'s vibez</h3>
+    <div class="pb-4">
       <% if @bar.subvibes.length > 0 %>
         <div class="grid-subvibes">
           <% @bar.subvibes.each do |subvibe| %>
@@ -14,9 +23,12 @@
           <% end %>
         </div>
       <% else %>
-        <h2>This bar doesnt have subvibes yet!</h2>
+        <h2>This bar doesn't have subvibes yet!</h2>
       <% end %>
-      <h3>Viberz Who Likes Bar</h3>
+    </div>
+
+    <h3>Viberz who like <%= @bar.name %></h3>
+    <div class="pb-4">
       <% if @bar.users.length > 0 %>
         <div class="grid-subvibes">
           <% @bar.users.each do |user| %>
@@ -27,8 +39,9 @@
           <% end %>
         </div>
       <% else %>
-        <h2>This bar doesnt have viberzs yet!</h2>
+        <h2>This bar doesn't have viberzs yet!</h2>
       <% end %>
     </div>
-    <button type="button" style="width: 400px" class="white">Letz Gooo</button>
+
+  <div type="button" class="btn btn-light">Letz Find your vibe</div>
 </div>

@@ -172,6 +172,15 @@ puts 'Creating 20 bars'
 
 puts 'Creating 5 bar subvibes'
 BarSubvibe.create!(bar: @sneaky_sip, subvibe: @games_boogie)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @kareoke_boogie)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @dancefloor_trendy)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @DJ_music_trendy)
+BarSubvibe.create!(bar: @sneaky_sip, subvibe: @seating_pub)
+Favourite.create!(bar:@sneaky_sip,user:@luc)
+Favourite.create!(bar:@sneaky_sip,user:@feline)
+Favourite.create!(bar:@sneaky_sip,user:@aureo)
+Favourite.create!(bar:@sneaky_sip,user:@jonas)
+Favourite.create!(bar:@sneaky_sip,user:@jeff)
 BarSubvibe.create!(bar: @oasis, subvibe: @kareoke_boogie)
 BarSubvibe.create!(bar: @copacabana, subvibe: @tapas_boogie)
 BarSubvibe.create!(bar: @boa_vista, subvibe: @DJ_music_boogie)
