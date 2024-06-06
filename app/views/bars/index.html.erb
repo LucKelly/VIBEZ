@@ -5,3 +5,68 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+<%# PLEASE DON'T MESS WITH, FRAGILE BUTTON FILTERS <3 %>
+<div class="filters-container">
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'boogie'
+        %>
+      <div data-filter-target="element">
+      <%= submit_tag "Boogie", name: "", class: @current_params === 'boogie' ? "btn selected" : "btn btn-filter" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'intimate'
+        %>
+      <div data-filter-target="element">
+      <%= submit_tag "Intimate", name: "", class: @current_params === 'intimate' ? "btn selected" : "btn btn-filter" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'pub'
+        %>
+      <div data-filter-target="element">
+      <%= submit_tag "Pub", name: "", class: @current_params === 'pub' ? "btn selected" : "btn btn-filter" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'sports'
+        %>
+      <div data-filter-target="element">
+      <%= submit_tag "Sports", name: "", class: @current_params === 'sports' ? "btn selected" : "btn btn-filter" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="filter-form">
+    <%= form_with url: bars_path, method: :get, class: "d-flex" do %>
+      <%= hidden_field_tag :query,
+            params[:query],
+            value: 'trendy'
+        %>
+      <div data-filter-target="element">
+      <%= submit_tag "Trendy", name: "", class: @current_params === 'Trendy' ? "btn selected" : "btn btn-filter" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%# chaos button %>
+  <%= button_to bar_path(@random_bar), method: :get, class: 'btn btn-chaos' do %>
+    <i class="fa-solid fa-dice"></i>
+  <% end %>
