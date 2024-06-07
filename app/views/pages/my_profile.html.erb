@@ -1,6 +1,6 @@
 <div class="profile-page-body">
 
-    <h3 class="profile-title-text"><%= @user.username %>'s vibez</h3>
+    <h3 class="profile-title-text">My vibez</h3>
     <div class="pb-4">
       <% if @user.subvibes.length > 0 %>
         <div class="grid-subvibes-style d-flex flex-wrap justify-content-between">
@@ -13,12 +13,12 @@
           <% end %>
         </div>
       <% else %>
-        <h2>This viber doesn't have any favourite vibes yet!</h2>
+        <h2 class="profile-default-messages">Time to add a vibe!</h2>
       <% end %>
     </div>
 
 
-    <h3 class="bar-header-text"><%= @user.username %>'s favourite bars</h3>
+    <h3 class="bar-header-text">My favourite bars</h3>
     <div class="pb-4">
       <% if @user.bars.length > 0 %>
         <div class="grid-subvibes-style d-flex flex-wrap justify-content-between">
@@ -30,7 +30,7 @@
           <% end %>
         </div>
       <% else %>
-        <h2>This viber doesn't have favourites yet!</h2>
+        <h2 class="profile-default-messages">You don't have any favourites yet!</h2>
       <% end %>
     </div>
 
