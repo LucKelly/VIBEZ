@@ -11,7 +11,7 @@
   </head>
 
   <body class="vw-100">
-    <% unless controller_name == "pages" && action_name == "landing_page" || controller_name == "ApplicationController" && action_name == "log_in" %>
+    <% unless (params[:controller] == "pages" && params[:action] == "landing_page") || (params[:controller].include?("devise") && params[:action] == "new") || (params[:controller].include?("devise") && params[:action] == "new")%>
     <%# <% unless controller_name == "pages" && action_name == "landing_page"%>
         <%= render "shared/navbar" %>
     <%end %>
