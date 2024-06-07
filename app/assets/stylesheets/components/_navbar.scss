@@ -1,11 +1,10 @@
-.navbar {
-background-color: transparent;
-z-index: 10;
-margin-top: -5px;
-padding: 5px;
+.vibez-navbar {
+  background-color: transparent;
+  z-index: 10;
+  height: 60px
 }
 
 .header {
-font-family: $magilio;
-color: white;
+  font-family: $magilio;
+  color: white;
 }
