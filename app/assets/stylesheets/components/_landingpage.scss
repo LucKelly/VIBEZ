@@ -303,8 +303,7 @@ height: 100vh;
 }
 
 .title_landing {
-  font-family: 'MagilioRegular-Yzv2O';
-  src: url('/assets/fonts/MagilioRegular-Yzv2O.ttf') format('truetype');
+  font-family: $magilio;
   font-weight: bold ;
   font-style: normal;
   color: white;
