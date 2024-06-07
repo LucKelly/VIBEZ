@@ -3,4 +3,13 @@ class PagesController < ApplicationController
 
   def landing_page
   end
+
+  # own user profile page
+  def my_profile
+    @user = current_user
+  end
+
+  def other_profile
+    @user = User.find(params[:id])
+  end
 end
