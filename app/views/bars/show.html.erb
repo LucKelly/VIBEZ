@@ -1,23 +1,31 @@
-<div class="vw-100 height-minus-navbar h-100 text-white d-flex flex-column text-center align-items-center justify-content-center pb-4 px-4  min-vh-100 pink-purple-gradient dumb-body-fix">
+<div class="bar-page-body">
+
+<%# vw-100 height-minus-navbar h-100 text-white d-flex flex-column text-center align-items-center justify-content-center pb-4 px-4 pink-purple-gradient dumb-body-fix %>
+    <%# <div> %>
+      <div class="bar-image-container">
+        <%= cl_image_tag @bar.photo.key, crop: :fill, class: "bar-image" %>
+      </div>
+    <%# </div> %>
 
     <div class="d-flex gap-3 align-items-center justify-content-between w-100 py-4">
       <div class="text-start">
-        <h2><%= @bar.name %></h2>
+        <h2 class="bar-header-text"><%= @bar.name %></h2>
         <p><%= @bar.price %></p>
-        <p>Closes at <%= @bar.closing_time %> hours</p>
+        <p>Closes at <%= @bar.closing_time %>h</p>
       </div>
       <div>
-        <i class="fa-regular fa-bookmark"></i>
+        <i class="fa-regular fa-bookmark fa-2x"></i>
       </div>
     </div>
 
-    <h3><%= @bar.name %>'s vibez</h3>
+    <h3 class="bar-header-text"><%= @bar.name %>'s vibez</h3>
     <div class="pb-4">
       <% if @bar.subvibes.length > 0 %>
-        <div class="grid-subvibes">
+        <div class="grid-subvibes-style d-flex flex-wrap justify-content-between">
           <% @bar.subvibes.each do |subvibe| %>
             <div class="icon-card">
-              <i class="fa-solid fa-champagne-glasses icon-img"></i>
+              <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
+              <%# <i class="fa-solid fa-champagne-glasses icon-img"></i> %>
               <%=subvibe.name%>
             </div>
           <% end %>
@@ -27,14 +35,14 @@
       <% end %>
     </div>
 
-    <h3>Viberz who like <%= @bar.name %></h3>
+    <h3 class="bar-header-text">Viberz who like <%= @bar.name %></h3>
     <div class="pb-4">
       <% if @bar.users.length > 0 %>
-        <div class="grid-subvibes">
+        <div class="grid-subvibes-style d-flex flex-wrap justify-content-between">
           <% @bar.users.each do |user| %>
-            <div>
-              <%= image_tag("https://source.unsplash.com/random/?user", class: "avatar-img") %>
-              <%= link_to user.username, root_path %>
+            <div class="avatar-card">
+              <%= cl_image_tag user.photo.key, class: "avatar-img" %>
+              <%= link_to user.username, user_path(user.id) %>
             </div>
           <% end %>
         </div>
@@ -43,5 +51,5 @@
       <% end %>
     </div>
 
-  <div type="button" class="btn btn-light">Letz Find your vibe</div>
+  <div type="button" class="button-landing-page redirect-button-margin">Take me there!</div>
 </div>
