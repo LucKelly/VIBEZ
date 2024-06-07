@@ -1,5 +1,11 @@
 <div class="profile-page-body">
 
+
+
+    <div class="avatar-card">
+      <%= cl_image_tag @user.photo.key, class: "avatar-img" %>
+    </div>
+
     <h3 class="profile-title-text"><%= @user.username %>'s vibez</h3>
     <div class="pb-4">
       <% if @user.subvibes.length > 0 %>
@@ -13,7 +19,7 @@
           <% end %>
         </div>
       <% else %>
-        <h2>This viber doesn't have any favourite vibes yet!</h2>
+        <h2 class="profile-default-messages">This viber doesn't have any favourite vibes yet!</h2>
       <% end %>
     </div>
 
@@ -30,11 +36,8 @@
           <% end %>
         </div>
       <% else %>
-        <h2>This viber doesn't have favourites yet!</h2>
+        <h2 class="profile-default-messages">This viber doesn't have favourites yet!</h2>
       <% end %>
     </div>
-
-
-    <div type="button" class="button-landing-page redirect-button-margin">Edit your profile</div>
 
 </div>

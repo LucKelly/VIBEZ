@@ -1,14 +1,27 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <%= link_to "bars" , class: "navbar-brand" do %>
+    <%= link_to bars_path, class: "navbar-brand" do %>
     <div class= "header">
      Vibez
     </div>
     <% end %>
+    <div>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-outline-light" %>
+    </div>
 
     <%# TODO: redirect to my profile, change user profile picture %>
-    <a href="user" class="avatar">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-    </a>
+    <%# <a href="user" class="avatar">
+      <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+      <%# <% link_to other_profile_path(current_user.id) %>
+    <%# </a> %>
+
+    <div>
+      <%= link_to my_profile_path do %>
+      <div>
+        <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+      </div>
+      <% end %>
+    </div>
+
   </div>
 </nav>
