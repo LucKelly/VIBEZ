@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    resources :favourites, only: %i[index]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -7,11 +9,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   root to: "pages#landing_page"
-  resources :bars, only: %i[index show]
+  get "my_profile", to: "pages#my_profile"
+  get "other_profile/:id", to: "pages#other_profile", as: :other_profile
 
-  resources :users, only: %i[show edit update] do
-    resources :favourites, only: %i[index]
-  end
+  resources :bars, only: %i[index show]
 
   resources :favourites, only: %i[new create edit update delete]
 

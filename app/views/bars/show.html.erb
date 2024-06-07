@@ -42,7 +42,11 @@
           <% @bar.users.each do |user| %>
             <div class="avatar-card">
               <%= cl_image_tag user.photo.key, class: "avatar-img" %>
-              <%= link_to user.username, user_path(user.id) %>
+              <% if user.id == current_user.id %>
+                <%= link_to user.username, my_profile_path %>
+              <% else %>
+                <%= link_to user.username, other_profile_path(user.id) %>
+              <% end %>
             </div>
           <% end %>
         </div>
