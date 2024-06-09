@@ -1,3 +1,31 @@
+$logocolors: #ea9694, #dd8393, #f6ccd7 #ebcbf7, #fbefca, white, #fbefca, #ebcbf7,#f6ccd7, #ea9694 #dd8393;
+
+@mixin animate-logo-color($logocolors) {
+  $count: length($logocolors);
+  @keyframes change-color {
+    @for $i from 1 through $count {
+      #{percentage(($i - 1) / $count)} {
+        color: nth($logocolors, $i);
+      }
+    }
+    100% {
+      color: nth($logocolors, 1);
+    }
+  }
+}
+
+$iconcolors: #ffffff, #f0f0f0,#e0e0e0, #d0d0d0,#c0c0c0,#b0b0b0;
+
+@mixin flicker-background($iconcolors) {
+  @keyframes flicker {
+    @for $i from 0 through 50 {
+      #{percentage($i)} {
+        background-color: nth($iconcolors, random(length($iconcolors)));
+      }
+    }
+  }
+}
+
 .landing-container {
 background: linear-gradient(180deg, #3D2148 0%, #E2A0B0 100%);
 background-size: cover;
@@ -13,29 +41,31 @@ height: 100vh;
 
 .sun-div {
   border-radius: 50%;
-  background-color: white;
+  // background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 8%;
-  left: 30%;
+  height: 65px;
+  width: 65px;
+  top: 6%;
+  left: 56%;
   align-items: center;
   justify-content: center;
   border: 3px solid #E2A0B0;
   box-shadow: 1px 1px 10px 2px #FFCDD9 ;
+  @include flicker-background($iconcolors);
+  animation: flicker 1s steps(2) infinite;
 }
 
 
 .rooftop-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 10%;
-  left: 60%;
+  height: 65px;
+  width: 65px;
+  top: 6%;
+  left: 80%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -44,13 +74,13 @@ height: 100vh;
 
 .lip-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 32%;
-  left: 13%;
+  height: 65px;
+  width: 65px;
+  top: 6%;
+  left: 4%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -59,13 +89,13 @@ height: 100vh;
 
 .palm-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 82%;
-  left: 10%;
+  height: 65px;
+  width: 65px;
+  top: 76%;
+  left: 2%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -74,58 +104,64 @@ height: 100vh;
 
 .beer-div {
   border-radius: 50%;
-  background-color: white;
+  // background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 86%;
-  right: 45%;
+  height: 65px;
+  width: 65px;
+  top: 88%;
+  right: 55%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
   box-shadow: 1px 1px 10px 2px #FFCDD9 ;
+  @include flicker-background($iconcolors);
+  animation: flicker 1s steps(2) infinite;
 }
 
 .cup-div {
   border-radius: 50%;
-  background-color: white;
+  // background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
+  height: 65px;
+  width: 65px;
   top: 20%;
   right: 80%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
   box-shadow: 1px 1px 10px 2px #FFCDD9 ;
+  @include flicker-background($iconcolors);
+  animation: flicker 1s steps(2) infinite;
 }
 
 .music-div {
   border-radius: 50%;
-  background-color: white;
+  // background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 75%;
-  right: 10%;
+  height: 65px;
+  width: 65px;
+  top: 76%;
+  right: 2%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
   box-shadow: 1px 1px 10px 2px #FFCDD9 ;
+  @include flicker-background($iconcolors);
+  animation: flicker 1s steps(2) infinite;
 }
 
 .dj-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 65%;
-  left: 15%;
+  height: 65px;
+  width: 65px;
+  top: 88%;
+  left: 2%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -135,13 +171,13 @@ height: 100vh;
 
 .sitting-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 55%;
-  right: 10%;
+  height: 65px;
+  width: 65px;
+  top: 88%;
+  right: 28%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -150,13 +186,13 @@ height: 100vh;
 
 .disco-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 40%;
-  right: 10%;
+  height: 65px;
+  width: 65px;
+  top: 20%;
+  right: 54%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -165,13 +201,13 @@ height: 100vh;
 
 .tapas-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
+  height: 65px;
+  width: 65px;
   top: 88%;
-  right: 20%;
+  right: 2%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -180,13 +216,13 @@ height: 100vh;
 
 .darts-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 47%;
-  left: 10%;
+  height: 65px;
+  width: 65px;
+  top: 6%;
+  left: 29%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -195,13 +231,13 @@ height: 100vh;
 
 .cowboy-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 27%;
-  right: 15%;
+  height: 65px;
+  width: 65px;
+  top: 20%;
+  right: 28%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -210,13 +246,13 @@ height: 100vh;
 
 .karaoke-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 22%;
-  right: 50%;
+  height: 65px;
+  width: 65px;
+  top: 20%;
+  right: 3%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
@@ -225,71 +261,19 @@ height: 100vh;
 
 .ambiente-div {
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff73;
   position: absolute;
   display: flex;
-  height: 50px;
-  width: 50px;
-  top: 75%;
-  right: 37%;
+  height: 65px;
+  width: 65px;
+  top: 76%;
+  right: 40%;
   align-items: center;
   justify-content: center;
   border: 2px solid #FFCDD9;
   box-shadow: 1px 1px 10px 2px #FFCDD9 ;
 }
 
-.button-landing-page {
-  align-items: center;
-  background-color: #fee6e3;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #111;
-  cursor: pointer;
-  display: flex;
-  font-family: Inter,sans-serif;
-  font-size: 16px;
-  height: 48px;
-  justify-content: center;
-  line-height: 24px;
-  max-width: 100%;
-  padding: 0 25px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-landing-page:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-
-.button-landing-page:hover:after {
-  transform: translate(0, 0);
-}
-
-.button-landing-page:active {
-  background-color: #ffdeda;
-  outline: 0;
-}
-
-.button-landing-page:hover {
-  outline: 0;
-  color: #3D2148;
-}
 
 @media (min-width: 768px) {
   .button-56 {
@@ -297,15 +281,17 @@ height: 100vh;
   }
 }
 
-.D-Controller {
-  color: white;
-  opacity: 60%;
+.description_landing {
+  color: #ffffff;
+  letter-spacing: 1.01px;
 }
 
 .title_landing {
-  font-family: $magilio;
-  font-weight: bold ;
+  font-family: $logo-font;
   font-style: normal;
-  color: white;
-  font-size: 60px;
+  font-size: 10rem;
+  margin-bottom: 10px;
+  height: 120px;
+  @include animate-logo-color($logocolors);
+  animation: change-color 10s ease infinite;
 }
