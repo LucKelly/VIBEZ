@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="vw-100">
+  <body>
     <% unless (params[:controller] == "pages" && params[:action] == "landing_page") || (params[:controller].include?("devise") && params[:action] == "new") || (params[:controller].include?("devise") && params[:action] == "new")%>
         <%= render "shared/navbar" %>
     <%end %>
