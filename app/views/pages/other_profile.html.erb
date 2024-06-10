@@ -6,9 +6,9 @@
   <h3 class="header-font"><%= @user.username %>'s vibez</h3>
   <div class="pb-4">
     <% if @user.subvibes.length > 0 %>
-      <div class="grid-subvibes-style d-flex flex-wrap justify-content-between">
+      <div class="grid-subvibes-style d-flex flex-wrap justify-content-flex-start">
         <% @user.subvibes.each do |subvibe| %>
-          <div class="icon-card subvibe-font">
+          <div class="icon-card">
             <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
             <%=subvibe.name%>
           </div>
@@ -23,11 +23,11 @@
   <h3 class="header-font"><%= @user.username %>'s favourite bars</h3>
   <div class="pb-4">
     <% if @user.bars.length > 0 %>
-      <div class="grid-subvibes-style d-flex flex-wrap justify-content-between">
+      <div class="grid-subvibes-style d-flex flex-wrap justify-content-flex-start">
         <% @user.bars.each do |bar| %>
-          <div class="avatar-card subvibe-font">
+          <div class="icon-card">
             <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
-            <%= link_to bar.name, bar_path(bar.id) %>
+            <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
           </div>
         <% end %>
       </div>
