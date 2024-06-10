@@ -32,8 +32,9 @@
         <% else %>
           <h2 class="paragraph-font">You don't have any favourites yet!</h2>
         <% end %>
-    </div>
+      </div>
 
+      <%= link_to "My notes", root_path, class: "secondary-btn header-font" %>
 
     </div>
     <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
@@ -41,6 +42,8 @@
         <% if @user.subvibes.length > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
             <% @user.subvibes.each do |subvibe| %>
+              <button>x</button>
+              <%= link_to "x", user_subvibe_path(@user_subvibe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
               <div class="icon-card">
                 <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
                 <%=subvibe.name%>
@@ -51,7 +54,25 @@
           <h2 class="paragraph-font">Time to add a vibe!</h2>
         <% end %>
       </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
 
+                <%= simple_form_for @usersubvibe do |f| %>
+                <%= f.association :subvibe.name, prompt: "Select a vibe"%>
+                <%= f.submit "Add a vibe!", class: "secondary-btn" %>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
