@@ -1,0 +1,65 @@
+
+$primary-color: #f3dae8;
+$primary-color-dark: #e1a3c6;
+$button-padding: 10px 20px;
+$button-border-radius: 5px;
+$button-font-size: 1.2rem;
+$button-font-weight: 600;
+$button-text-color: #956580;
+$button-text-color-dark: #934270;
+
+
+.tab-btn {
+  display: inline-block;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  color: $button-text-color;
+  background-color: $primary-color;
+  border: none;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1.02px;
+  margin-right: 10px;
+  margin-left: 10px;
+  align-self: center;
+    &:active {
+      background-color: $primary-color-dark;
+      transform: scale(0.98);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.5);
+    }
+  }
+
+  .tab-btn:hover {
+    transition: 0.3s ease;
+    background-color: $primary-color-dark;
+    color: $button-text-color-dark;
+  }
+
+  /* Override Bootstrap tab button styles */
+// .nav-tabs .nav-link {
+//   border-bottom: none !important; /* Remove border */
+//   box-shadow: none !important; /* Remove box-shadow */
+// }
+
+// .nav-tabs .nav-link.active {
+//   border: none !important; /* Remove border for active tab */
+//   box-shadow: none !important; /* Remove box-shadow for active tab */
+// }
+
+
+#myTab {
+  border-bottom: none;
+}
+
+#profile-tab,
+#home-tab {
+  border-radius: 25%;
+  margin-bottom: 5px;
+}

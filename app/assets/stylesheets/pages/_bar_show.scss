@@ -1,6 +1,6 @@
 .bar-page-body {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,13 +20,17 @@
 }
 
 .grid-subvibes-style {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 20px;
+  padding: 15px;
   gap: 16px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.346);
+  margin-top: 10px;
+  // min-height: 32vh;
+}
+
+.grid-subvibes-container {
+  min-width: 360px;
 }
 
 .bar-image {
@@ -40,17 +44,28 @@
 }
 
 .bar-image-container {
-  margin-top: 50px;
   position: relative;
   top: 0;
+  margin-bottom: 50px;
    /* Place the image at the top of its containing block */
 }
 
 .avatar-card {
+  background-color: rgba(230, 230, 230, 0.5);
+  border-radius: 10%;
+  padding: 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #3D2148;
+  min-width: 11ch;
+  max-width: 11ch;
+  text-align: center;
 }
 
 .avatar-img {
@@ -58,6 +73,12 @@
   height: 50px;
   object-fit: cover;
   border-radius: 0%;
+}
+
+.link-text {
+  color: #3D2148 !important; /* Change link color */
+  text-decoration: underline !important;
+  padding-top: 5px !important;;/* Remove underline */ /* Make the text bold */
 }
 
 
@@ -74,6 +95,14 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 0.9rem;
+  min-width: 11ch;
+  max-width: 11ch;
+  color: #3D2148;
+  text-align: center;
 }
 
 
@@ -84,4 +113,26 @@
 
 .redirect-button-margin {
   margin-bottom: 20px;
+}
+
+
+.bar-info-overlay {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 95%;
+  height: 50%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.price-font {
+  text-align: left !important;
 }
