@@ -11,3 +11,35 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
   src: font-url('/assets/fonts/MagilioRegular-Yzv2O.ttf') format('truetype')
 }
 $magilio: "Magilio";
+
+@font-face {
+  font-family: "Nighty DEMO";
+  src: font-url('/assets/fonts/NightyDEMO.otf') format('opentype');
+}
+$logo-font: "Nighty DEMO";
+
+
+.header-font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size:1.2rem;
+  color: white;
+  letter-spacing: 1.01px;
+}
+
+.paragraph-font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size:1rem;
+  color: rgba(255, 255, 255, 0.786);
+  letter-spacing: 1px;
+}
+
+.subvibe-font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 0.9rem;
+}
