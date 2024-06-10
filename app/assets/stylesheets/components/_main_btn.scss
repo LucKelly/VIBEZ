@@ -1,9 +1,26 @@
 
+$buttoncolors: #ea9694, #dd8393, #f6ccd7 #ebcbf7, #fbefca, white, #fbefca, #ebcbf7,#f6ccd7, #ea9694 #dd8393;
+
+@mixin animate-button-background($buttoncolors) {
+  $count: length($buttoncolors);
+  @keyframes change-background-color {
+    @for $i from 1 through $count {
+      #{percentage(($i - 1) / $count)} {
+        background-color: nth($buttoncolors, $i);
+      }
+    }
+    100% {
+      background-color: nth($buttoncolors, 1);
+    }
+  }
+}
+
+
 $primary-color: #f3dae8;
 $primary-color-dark: #e1a3c6;
 $button-padding: 10px 20px;
 $button-border-radius: 5px;
-$button-font-size: 1.2rem;
+$button-font-size: 1.4rem;
 $button-font-weight: 600;
 $button-text-color: #956580;
 $button-text-color-dark: #934270;
@@ -15,7 +32,7 @@ $button-text-color-dark: #934270;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
   color: $button-text-color;
-  background-color: $primary-color;
+  // background-color: $primary-color;
   border: none;
   border-radius: $button-border-radius;
   cursor: pointer;
@@ -25,19 +42,23 @@ $button-text-color-dark: #934270;
   letter-spacing: 1.02px;
   width: 50%;
   align-self: center;
-    &:active {
-      background-color: $primary-color-dark;
-      transform: scale(0.98);
-    }
+  @include animate-button-background($buttoncolors);
+  animation: change-background-color 10s ease infinite;
+}
 
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba($primary-color, 0.5);
-    }
-  }
 
-  .main-btn:hover {
-    transition: 0.3s ease;
-    background-color: $primary-color-dark;
-    color: $button-text-color-dark;
-  }
+//   &:active {
+//     background-color: $primary-color-dark;
+//     transform: scale(0.98);
+//   }
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: 0 0 0 3px rgba($primary-color, 0.5);
+//   }
+// }
+
+// .main-btn:hover {
+//   transition: 0.3s ease;
+//   background-color: $primary-color-dark;
+//   color: $button-text-color-dark;
