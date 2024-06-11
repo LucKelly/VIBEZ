@@ -3,6 +3,9 @@
   <div class="profile-page-avatar">
       <%= cl_image_tag @user.photo.key, class: "profile-avatar-img" %>
   </div>
+  <div>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-outline-light m-3" %>
+  </div>
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -20,30 +23,36 @@
     <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
       <div class="pb-4 grid-subvibes-container">
-        <% if @user.bars.length > 0 %>
+        <% if @user.all_favorites.count > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-            <% @user.bars.each do |bar| %>
+            <% @user.all_favorites.each do |bar| %>
               <div class="icon-card">
                 <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
-                <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
+                <%= link_to bar.favoritable.name, bar_path(bar.favoritable.id), class: "link-text" %>
               </div>
             <% end %>
           </div>
         <% else %>
-          <h2 class="paragraph-font">You don't have any favourites yet!</h2>
+          <h2 class="paragraph-font">You don't have any favorites yet!</h2>
         <% end %>
-    </div>
+      </div>
 
+      <%= link_to "My notes", root_path, class: "secondary-btn header-font" %>
 
     </div>
     <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <div class="pb-4 grid-subvibes-container">
         <% if @user.subvibes.length > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-            <% @user.subvibes.each do |subvibe| %>
+            <% @user.user_subvibes.each do |user_subvibe| %>
+
+
+              <%= link_to "x", user_subvibe_path(user_subvibe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+
               <div class="icon-card">
-                <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
-                <%=subvibe.name%>
+                <%= cl_image_tag user_subvibe.subvibe.photo.key, class: "avatar-img"%>
+                <%= user_subvibe.subvibe.name%>
               </div>
             <% end %>
           </div>
@@ -51,7 +60,25 @@
           <h2 class="paragraph-font">Time to add a vibe!</h2>
         <% end %>
       </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
 
+                <%= simple_form_for @usersubvibe do |f| %>
+                <%= f.association :subvibe.name, prompt: "Select a vibe"%>
+                <%= f.submit "Add a vibe!", class: "secondary-btn" %>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>

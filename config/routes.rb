@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users do
-    resources :favourites, only: %i[index]
-  end
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,9 +10,13 @@ Rails.application.routes.draw do
   get "my_profile", to: "pages#my_profile"
   get "other_profile/:id", to: "pages#other_profile", as: :other_profile
 
-  resources :bars, only: %i[index show]
+  resources :bars, only: %i[index show] do
+    post 'favorite', to: 'bars#favorite'
+  end
 
-  resources :favourites, only: %i[new create edit update delete]
+  get 'favorites', to: 'favorites#index', as: 'favorites'
 
-  resources :subvibes, only: %i[new create delete]
+  resources :subvibes, only: %i[create destroy]
+
+  resources :user_subvibes, only: %i[create destroy]
 end

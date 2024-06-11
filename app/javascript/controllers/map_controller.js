@@ -10,14 +10,59 @@ export default class extends Controller {
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
 
-    this.map = new mapboxgl.Map({
-      container: this.element,
-      style: "mapbox://styles/mapbox/dark-v11"
+    const successLocation = (position) => {
+      this.setupMap([position.coords.longitude, position.coords.latitude])
+    }
+
+    const errorLocation = () => {
+      this.setupMap([-2.24, 53.48]) // fallback to some default coordinates
+    }
+
+    navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+      enableHighAccuracy: true
     })
 
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+    this.setupMap = (center) => {
+      this.map = new mapboxgl.Map({
+        container: this.element,
+        style: "mapbox://styles/luc-kelly/clxa5si9h024001qx2v483cr5",
+        center: center,
+        zoom: 15
+      })
+
+      this.map.on('load', () => {
+        this.map.addSource('point', {
+          'type': 'geojson',
+          'data': {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': center
+            }
+          }
+        });
+
+        this.map.addLayer({
+          'id': 'point',
+          'type': 'circle',
+          'source': 'point',
+          'paint': {
+            'circle-radius': 10,
+            'circle-color': '#007cbf'
+          }
+        });
+      });
+    }
+    document.getElementById('btn-center').addEventListener('click', () => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.map.flyTo({
+          center: [position.coords.longitude, position.coords.latitude],
+          essential: true
+        });
+      });
+    });
   }
+
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {

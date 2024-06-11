@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   # own user profile page
   def my_profile
     @user = current_user
+    @usersubvibe = UserSubvibe.new
   end
 
   def other_profile
