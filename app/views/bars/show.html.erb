@@ -66,10 +66,17 @@
         <% if @bar.subvibes.length > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
             <% @bar.subvibes.each do |subvibe| %>
-              <div class="icon-card">
-                <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
-                <%=subvibe.name%>
-              </div>
+              <% if current_user.subvibes.include?(subvibe) %>
+                <div class="icon-card selected-icon">
+                  <%= cl_image_tag subvibe.photo.key, class: "avatar-img" %>
+                  <%= subvibe.name %>
+                </div>
+              <% else %>
+                <div class="icon-card">
+                  <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
+                  <%=subvibe.name%>
+                </div>
+              <% end %>
             <% end %>
           </div>
         <% else %>

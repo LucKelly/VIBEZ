@@ -1,26 +1,26 @@
-import { Controller } from "@hotwired/stimulus"
-import mapboxgl from 'mapbox-gl' // Don't forget this!
+import { Controller } from "@hotwired/stimulus";
+import mapboxgl from 'mapbox-gl'; // Don't forget this!
 
 export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array
-  }
+  };
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
 
     const successLocation = (position) => {
-      this.setupMap([position.coords.longitude, position.coords.latitude])
-    }
+      this.setupMap([position.coords.longitude, position.coords.latitude]);
+    };
 
     const errorLocation = () => {
-      this.setupMap([-2.24, 53.48]) // fallback to some default coordinates
-    }
+      this.setupMap([-2.24, 53.48]); // fallback to some default coordinates
+    };
 
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
       enableHighAccuracy: true
-    })
+    });
 
     this.setupMap = (center) => {
       this.map = new mapboxgl.Map({
@@ -28,7 +28,7 @@ export default class extends Controller {
         style: "mapbox://styles/luc-kelly/clxa5si9h024001qx2v483cr5",
         center: center,
         zoom: 15
-      })
+      });
 
       this.map.on('load', () => {
         this.map.addSource('point', {
@@ -52,33 +52,34 @@ export default class extends Controller {
           }
         });
       });
-    }
-    document.getElementById('btn-center').addEventListener('click', () => {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.map.flyTo({
-          center: [position.coords.longitude, position.coords.latitude],
-          essential: true
+
+      document.getElementById('btn-center').addEventListener('click', () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.map.flyTo({
+            center: [position.coords.longitude, position.coords.latitude],
+            essential: true
+          });
         });
       });
-    });
+
+      this.#addMarkersToMap();
+    };
   }
+    #addMarkersToMap() {
+      this.markersValue.forEach((marker) => {
+        const customMarker = document.createElement("a");
+        customMarker.setAttribute("href", `/bars/${marker.id}`);
+        customMarker.innerHTML = marker.marker_html;
 
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(this.map);
+      });
+    }
 
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-
-      const customMarker = document.createElement("a")
-      customMarker.setAttribute("href", `/bars/${marker.id}`)
-      customMarker.innerHTML = marker.marker_html
-
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(this.map)
-    })
-  }
     #fitMapToMarkers() {
-      const bounds = new mapboxgl.LngLatBounds()
-      this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-      this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+      const bounds = new mapboxgl.LngLatBounds();
+      this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+      this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
     }
 }
