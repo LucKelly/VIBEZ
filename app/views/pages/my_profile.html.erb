@@ -19,6 +19,7 @@
       </button>
     </li>
   </ul>
+
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
@@ -36,10 +37,8 @@
           <h2 class="paragraph-font">You don't have any favourites yet!</h2>
         <% end %>
       </div>
-
-      <%= link_to "My notes", root_path, class: "secondary-btn header-font" %>
-
     </div>
+
     <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <div class="pb-4 grid-subvibes-container">
         <% if @user.subvibes.length > 0 %>
@@ -59,10 +58,9 @@
         <% else %>
           <h2 class="paragraph-font">Time to add a vibe!</h2>
         <% end %>
-      </div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+        <button type="button" class="btn custom-plus-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog custom-modal-dialog">
             <div class="modal-content">
               <div class="modal-header custom-modal-header">
                 <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -70,13 +68,14 @@
               <div class="modal-body custom-modal-body">
                 <%= simple_form_for @usersubvibe do |f| %>
                   <%= f.association :subvibe, collection: Subvibe.distinct_on(:name), prompt: "Select a vibe", label: false, input_html: { class: 'custom-dropdown' }  %>
-                  <%= f.submit "Add a vibe!", class: "secondary-btn" %>
+                  <%= f.submit "Add a vibe!", class: "modal-btn paragraph-font" %>
                 <% end %>
 
               </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
