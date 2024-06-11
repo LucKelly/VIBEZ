@@ -41,12 +41,15 @@
       <div class="pb-4 grid-subvibes-container">
         <% if @user.subvibes.length > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-            <% @user.subvibes.each do |subvibe| %>
-              <button>x</button>
-              <%= link_to "x", user_subvibe_path(@user_subvibe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+            <% @user.user_subvibes.each do |user_subvibe| %>
+
+          
+              <%= link_to "x", user_subvibe_path(user_subvibe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+
               <div class="icon-card">
-                <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
-                <%=subvibe.name%>
+                <%= cl_image_tag user_subvibe.subvibe.photo.key, class: "avatar-img"%>
+                <%= user_subvibe.subvibe.name%>
               </div>
             <% end %>
           </div>
