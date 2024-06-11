@@ -1,5 +1,8 @@
 <div class="profile-page-body">
 
+  <div>
+    <h1 class="profile-name"><%= @user.username%></h1>
+  </div>
   <div class="profile-page-avatar">
       <%= cl_image_tag @user.photo.key, class: "profile-avatar-img" %>
   </div>
@@ -44,12 +47,8 @@
         <% if @user.subvibes.length > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
             <% @user.user_subvibes.each do |user_subvibe| %>
-
-
-              <%= link_to "x", user_subvibe_path(user_subvibe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-
-
               <div class="icon-card">
+              <%= link_to "x", user_subvibe_path(user_subvibe), class: "subvibe-delete-btn", data: {turbo_method: :delete}%>
                 <%= cl_image_tag user_subvibe.subvibe.photo.key, class: "avatar-img"%>
                 <%= user_subvibe.subvibe.name%>
               </div>
