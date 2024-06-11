@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   resources :bars, only: %i[index show]
 
-  resources :favourites, only: %i[new create edit update delete]
+  resources :favourites, only: %i[new create edit update destroy]
 
-  resources :subvibes, only: %i[new create delete]
+  resources :subvibes, only: %i[create destroy]
+
+  resources :user_subvibes, only: %i[create destroy]
 end
