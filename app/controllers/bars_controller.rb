@@ -30,7 +30,9 @@ class BarsController < ApplicationController
     @query_encode = URI::Parser.new.escape(query)
   end
 
-  # def show
-  #   @bar = Bar.find(params[:id])
-  # end
+  def favorite
+    @bar = Bar.find(params[:bar_id])
+    current_user.favorited?(@bar) ? current_user.unfavorite(@bar) : current_user.favorite(@bar)
+    redirect_to @bar
+  end
 end

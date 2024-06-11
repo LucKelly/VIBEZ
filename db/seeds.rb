@@ -280,13 +280,8 @@ puts 'Creating 20 bars'
 @v_rooftop = Bar.create!(name: " V rooftop", price: "€", opening_time: 11, closing_time: 20, address: "R. Rodrigo da Fonseca 2, 1250-191 Lisboa")
 @v_rooftop.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
 
-puts 'Creating 18 bar subvibes, 5 user subvibes for Luc and 5 favourites for sneaky_sip'
+puts 'Creating 18 bar subvibes, 5 user subvibes for Luc and 5 favorites for sneaky_sip'
 
-Favourite.create!(bar:@sneaky_sip,user:@luc)
-Favourite.create!(bar:@sneaky_sip,user:@feline)
-Favourite.create!(bar:@sneaky_sip,user:@aureo)
-Favourite.create!(bar:@sneaky_sip,user:@jonas)
-Favourite.create!(bar:@sneaky_sip,user:@jeff)
 BarSubvibe.create!(bar: @oasis, subvibe: @kareoke_boogie)
 BarSubvibe.create!(bar: @copacabana, subvibe: @tapas_boogie)
 BarSubvibe.create!(bar: @boa_vista, subvibe: @DJ_music_boogie)

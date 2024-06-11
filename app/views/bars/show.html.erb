@@ -8,8 +8,20 @@
             <p class="paragraph-font price-font"><%= @bar.price %></p>
             <p class="paragraph-font">Closes at <%= @bar.closing_time %>h</p>
           </div>
-          <div>
-            <i class="fa-regular fa-bookmark fa-2x"></i>
+          <% if current_user.favorited?(@bar) %>
+            <div>
+              <%= link_to bar_favorite_path(@bar), data: {turbo_method: :post}, class: "favorite-button" do %>
+                <i class="fa-solid fa-bookmark fa-2x"></i>
+              <% end %>
+            </div>
+            <% else %>
+            <div>
+              <%= link_to bar_favorite_path(@bar), data: {turbo_method: :post}, class: "favorite-button" do %>
+                <i class="fa-regular fa-bookmark fa-2x"></i>
+              <% end %>
+            </div>
+          <% end %>
+
           </div>
         </div>
       </div>
@@ -31,9 +43,9 @@
   <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
     <div class="pb-4 grid-subvibes-container">
-      <% if @bar.users.length > 0 %>
+      <% if @bar.favoritors.count > 0 %>
         <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-          <% @bar.users.each do |user| %>
+          <% @bar.favoritors.each do |user| %>
             <div class="avatar-card">
               <%= cl_image_tag user.photo.key, class: "avatar-img" %>
               <% if user.id == current_user.id %>
