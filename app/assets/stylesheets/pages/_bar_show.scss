@@ -16,10 +16,6 @@
   height: calc(100% - 56px);
 }
 
-.pink-purple-gradient {
-  // background: linear-gradient(180deg, #3D2148 0%, #E2A0B0 100%);
-}
-
 .grid-subvibes-style {
   padding: 15px;
   gap: 16px;
@@ -74,6 +70,11 @@
   height: 50px;
   object-fit: cover;
   border-radius: 0%;
+}
+
+.selected-icon {
+  border: 3px solid #FFCDD9;
+  box-shadow: 1px 1px 10px 2px #FFCDD9 ;
 }
 
 .link-text {
