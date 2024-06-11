@@ -155,9 +155,9 @@ puts 'Creating 5 DJ_music subvibes'
 
 
 puts 'Creating 5 seating subvibes'
-@seating_boogie = Subvibe.create!(name: "seating boogie", main_vibe: "boogie")
+@seating_boogie = Subvibe.create!(name: "seating", main_vibe: "boogie")
 @seating_boogie.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670496/009-waiting-room_hf4pep.png'), filename: 'seating_boogie.jpg')
-@seating_intimate = Subvibe.create!(name: "seating intimate", main_vibe: "intimate")
+@seating_intimate = Subvibe.create!(name: "seating", main_vibe: "intimate")
 @seating_intimate.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670496/009-waiting-room_hf4pep.png'), filename: 'seating_intimate.jpg')
 @seating_trendy = Subvibe.create!(name: "seating trendy", main_vibe: "trendy")
 @seating_trendy.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670496/009-waiting-room_hf4pep.png'), filename: 'seating_trendy.jpg')

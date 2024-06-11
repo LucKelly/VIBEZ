@@ -1,13 +1,12 @@
 class UserSubvibesController < ApplicationController
 
-
   def create
     @usersubvibe = UserSubvibe.new(subvibe_params)
     @usersubvibe.user = current_user
     if @usersubvibe.save
       redirect_to my_profile_path
     else
-      render "my_profile"
+      redirect_to root_path
     end
   end
 
