@@ -27,11 +27,11 @@
   border-radius: 5px;
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.346);
   margin-top: 10px;
-  // min-height: 32vh;
 }
 
 .grid-subvibes-container {
   min-width: 360px;
+  position: relative;
 }
 
 .bar-image {
@@ -91,7 +91,6 @@
   background-color: rgba(230, 230, 230, 0.5);
   border-radius: 10%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -104,6 +103,7 @@
   max-width: 11ch;
   color: #3D2148;
   text-align: center;
+  position: relative;
 }
 
 

@@ -1,4 +1,8 @@
 <div class="profile-page-body">
+  <div>
+    <h1 class="profile-name"><%= @user.username%></h1>
+  </div>
+  
   <div class="profile-page-avatar">
     <%= cl_image_tag @user.photo.key, class: "profile-avatar-img" %>
   </div>

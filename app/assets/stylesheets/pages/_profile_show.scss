@@ -1,5 +1,3 @@
-
-
 .profile-page-body {
   width: 100vw;
   min-height: 100vh;
@@ -23,9 +21,29 @@
   border-radius: 50%;
   padding: 5px;
   margin-bottom: 20px;
-
 }
 
-.modal-title {
-  color: black;
+.subvibe-delete-btn {
+  position: absolute;
+  top: -10%;
+  right: -2%;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:#956580;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  align-self: center;
+}
+
+.profile-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size:2rem;
+  color: white;
+  letter-spacing: 1.01px;
 }

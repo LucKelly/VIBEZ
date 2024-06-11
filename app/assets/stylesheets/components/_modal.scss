@@ -1,0 +1,75 @@
+.custom-modal-header {
+  background-color: #7E5371 !important;
+  border-bottom: none !important;
+  // position: relative;
+}
+
+
+.custom-plus-btn {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:#f3dae8;
+  background-color: #956580;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  align-self: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.custom-modal-body {
+  background-color: #7E5371 !important;
+}
+
+.custom-modal-dialog {
+  margin-top: 50px;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: center;
+  border: solid;
+  border-color: #f3dae8;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #956580;
+  align-self: center;
+}
+// .custom-item-wrapper-class {
+//   background-color: #c21111 !important;
+// }
+
+
+.custom-dropdown {
+  background-color: #E2A0B0;
+}
+
+
+
+
+// ATTEMPTED DROPDOWN STYLING BELOW
+/* Style the options */
+// .custom-dropdown: {
+//   background-color:green;
+//   color: #333;
+//   padding: 10px;
+// }
+
+// /* Style the dropdown on hover */
+// .custom-dropdown:hover {
+//   border-color: #888;
+// }
+
+/* Style the selected option */
+// .custom-dropdown option:checked {
+//   background-color: #007bff;
+//   color: #fff;
+// }

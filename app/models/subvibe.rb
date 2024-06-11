@@ -7,5 +7,4 @@ class Subvibe < ApplicationRecord
 
   validates :name, presence: true
   validates :main_vibe, presence: true, inclusion: %w[boogie intimate pub sports trendy]
-
 end

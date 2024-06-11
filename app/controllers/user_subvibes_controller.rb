@@ -1,21 +1,19 @@
 class UserSubvibesController < ApplicationController
 
-
   def create
     @usersubvibe = UserSubvibe.new(subvibe_params)
     @usersubvibe.user = current_user
     if @usersubvibe.save
       redirect_to my_profile_path
     else
-      render "my_profile"
+      redirect_to root_path
     end
   end
 
   def destroy
-    @user = current_user
-    @usersubvibe = UserSubvibe.find_by(user_id: current_user.id)
+    @usersubvibe = UserSubvibe.find(params[:id])
     @usersubvibe.destroy
-    redirect_to my_profile_path
+    redirect_to my_profile_path, notice: 'subvibe deleted'
   end
 
   private

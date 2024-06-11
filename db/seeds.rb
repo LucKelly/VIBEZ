@@ -155,6 +155,7 @@ dj_music_sports.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/
 
 
 puts 'Creating 5 seating subvibes'
+
 seating_boogie = Subvibe.create!(name: "seating", main_vibe: "boogie")
 seating_boogie.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670496/009-waiting-room_hf4pep.png'), filename: 'seating_boogie.jpg')
 seating_intimate = Subvibe.create!(name: "seating", main_vibe: "intimate")
