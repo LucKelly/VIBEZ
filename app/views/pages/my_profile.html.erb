@@ -27,17 +27,17 @@
     <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
       <div class="pb-4 grid-subvibes-container">
-        <% if @user.bars.length > 0 %>
+        <% if @user.all_favorites.count > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-            <% @user.bars.each do |bar| %>
+            <% @user.all_favorites.each do |bar| %>
               <div class="icon-card">
                 <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
-                <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
+                <%= link_to bar.favoritable.name, bar_path(bar.favoritable.id), class: "link-text" %>
               </div>
             <% end %>
           </div>
         <% else %>
-          <h2 class="paragraph-font">You don't have any favourites yet!</h2>
+          <h2 class="paragraph-font">You don't have any favorites yet!</h2>
         <% end %>
       </div>
     </div>

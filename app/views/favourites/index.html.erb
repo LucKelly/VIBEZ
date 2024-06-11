@@ -1,0 +1,15 @@
+<h1>Your Favorites</h1>
+<div>
+<% @favorites.each do |favorite| %>
+  <p><%= favorite.name %></p>
+  <%= form_with(model: favorite, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :notes %>
+      <%= form.text_area :notes %>
+    </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>
+</div>
