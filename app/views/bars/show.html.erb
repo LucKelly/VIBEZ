@@ -22,68 +22,68 @@
             </div>
           <% end %>
 
-          </div>
+
         </div>
       </div>
 
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active tab-btn header-font" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">
-      Vibez
-    </button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link tab-btn header-font" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">
-      Viberz
-    </button>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active tab-btn header-font" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">
+        Vibez
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link tab-btn header-font" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">
+        Viberz
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
-    <div class="pb-4 grid-subvibes-container">
-      <% if @bar.favoritors.count > 0 %>
-        <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-          <% @bar.favoritors.each do |user| %>
-            <div class="avatar-card">
-              <%= cl_image_tag user.photo.key, class: "avatar-img" %>
-              <% if user.id == current_user.id %>
-                <%= link_to user.username, my_profile_path, class: "link-text" %>
-              <% else %>
-                <%= link_to user.username, other_profile_path(user.id), class: "link-text" %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <h2 class="paragraph-font">This bar doesn't have viberzs yet!</h2>
-      <% end %>
-    </div>
-  </div>
-  <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <div class="pb-4 grid-subvibes-container">
-        <% if @bar.subvibes.length > 0 %>
+        <% if @bar.favoritors.count > 0 %>
           <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
-            <% @bar.subvibes.each do |subvibe| %>
-              <% if current_user.subvibes.include?(subvibe) %>
-                <div class="icon-card selected-icon">
-                  <%= cl_image_tag subvibe.photo.key, class: "avatar-img" %>
-                  <%= subvibe.name %>
-                </div>
-              <% else %>
-                <div class="icon-card">
-                  <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
-                  <%=subvibe.name%>
-                </div>
-              <% end %>
+            <% @bar.favoritors.each do |user| %>
+              <div class="avatar-card">
+                <%= cl_image_tag user.photo.key, class: "avatar-img" %>
+                <% if user.id == current_user.id %>
+                  <%= link_to user.username, my_profile_path, class: "link-text" %>
+                <% else %>
+                  <%= link_to user.username, other_profile_path(user.id), class: "link-text" %>
+                <% end %>
+              </div>
             <% end %>
           </div>
         <% else %>
-          <h2 class="paragraph-font">This bar doesn't have subvibes yet!</h2>
+          <h2 class="paragraph-font">This bar doesn't have viberzs yet!</h2>
         <% end %>
       </div>
+    </div>
+    <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="pb-4 grid-subvibes-container">
+          <% if @bar.subvibes.length > 0 %>
+            <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+              <% @bar.subvibes.each do |subvibe| %>
+                <% if current_user.subvibes.include?(subvibe) %>
+                  <div class="icon-card selected-icon">
+                    <%= cl_image_tag subvibe.photo.key, class: "avatar-img" %>
+                    <%= subvibe.name %>
+                  </div>
+                <% else %>
+                  <div class="icon-card">
+                    <%= cl_image_tag subvibe.photo.key, class: "avatar-img"%>
+                    <%=subvibe.name%>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% else %>
+            <h2 class="paragraph-font">This bar doesn't have subvibes yet!</h2>
+          <% end %>
+        </div>
+    </div>
   </div>
-</div>
-  <%= link_to "Take me there!", @query_encode, class: "main-btn redirect-button-margin" %>
+    <%= link_to "Take me there!", @query_encode, class: "main-btn redirect-button-margin" %>
 </div>
