@@ -8,4 +8,9 @@ export default class extends Controller {
   showMap() {
     document.getElementById("minimap-tab").classList.remove("d-none")
   }
+
+  hideMap() {
+    document.getElementById("minimap-tab").classList.add("d-none")
+    document.getElementById("minimap-tab").classList.add("d-none")
+  }
 }
