@@ -1,4 +1,4 @@
-<div class="bar-page-body">
+<div class="bar-page-body" data-controller="map-button">
 
       <div class="bar-image-container">
         <%= cl_image_tag @bar.photo.key, crop: :fill, class: "bar-image" %>
@@ -39,8 +39,8 @@
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link tab-btn header-font" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button" role="tab" aria-controls="map-tab-pane" aria-selected="false">
-        Location
+      <button class="nav-link tab-btn header-font" id="map-tab" data-action="click->map-button#showMap" data-bs-toggle="tab" data-bs-target="#map-tab-pane" type="button" role="tab" aria-controls="map-tab-pane" aria-selected="false">
+        Map
       </button>
     </li>
   </ul>
@@ -90,14 +90,14 @@
         </div>
     </div>
 
-<div id="minimap-tab" class="tabcontent">
+<div id="minimap-tab" class="tabcontent d-none">
   <div class="tab-pane fade" id="map-tab-pane" role="tabpanel" aria-labelledby="map-tab" tabindex="0">
     <div class="grid-subvibes-container minimap-container">
       <div id="minimap"
       data-controller="minimap"
       data-minimap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
       data-minimap-latitude="<%= @bar.latitude %>"
-      data-minimap-longitude="<%= @bar.longitude %>" style="width: 100%; height: 337px;"></div>
+      data-minimap-longitude="<%= @bar.longitude %>" style="width: 100%; height: 300px;"></div>
     </div>
   </div>
 </div>
