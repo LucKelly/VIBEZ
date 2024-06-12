@@ -6,7 +6,7 @@ class UserSubvibesController < ApplicationController
     if @usersubvibe.save
       redirect_to my_profile_path
     else
-      redirect_to root_path
+      redirect_to my_profile_path, notice: 'vibe already added!'
     end
   end
 
