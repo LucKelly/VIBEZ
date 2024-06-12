@@ -69,7 +69,6 @@
                   <%= f.association :subvibe, collection: Subvibe.distinct_on(:name), prompt: "Select a vibe", label: false, input_html: { class: 'custom-dropdown' }  %>
                   <%= f.submit "Add a vibe!", class: "modal-btn paragraph-font" %>
                 <% end %>
-
               </div>
             </div>
           </div>
