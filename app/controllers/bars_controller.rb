@@ -26,7 +26,7 @@ class BarsController < ApplicationController
 
   def show
     @bar = Bar.find(params[:id])
-    query = "https://www.google.com/maps/search/?api=1&query=#{@bar.name} #{@bar.address}"
+    query = "https://www.google.com/maps?saddr=My+Location&daddr=#{@bar.name}+#{@bar.address}"
     @query_encode = URI::Parser.new.escape(query)
   end
 
