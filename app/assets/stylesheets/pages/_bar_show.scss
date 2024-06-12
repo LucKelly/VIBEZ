@@ -34,6 +34,10 @@
   position: relative;
 }
 
+.fade {
+  transition: opacity 0s linear; /* Change the duration to 0.1s for faster fade */
+}
+
 .bar-image {
   width: 400px;
   max-width: 100%;
@@ -152,4 +156,21 @@
 
 .general-info-font {
   text-align: left !important;
+}
+
+
+#minimap {
+  border-radius: 10px;
+  box-shadow: 1px 3px 3px rgba(55, 42, 52, 0.346);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 50%;
+  width: 50%;
+  margin-top: 5px;
+}
+.tab-pane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

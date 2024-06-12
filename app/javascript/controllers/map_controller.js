@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
-import mapboxgl from 'mapbox-gl'; // Don't forget this!
+import mapboxgl from 'mapbox-gl';
 
 export default class extends Controller {
   static values = {
@@ -15,7 +15,7 @@ export default class extends Controller {
     };
 
     const errorLocation = () => {
-      this.setupMap([-2.24, 53.48]); // fallback to some default coordinates
+      this.setupMap([-2.24, 53.48]);
     };
 
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {

@@ -1,7 +1,7 @@
 
 $primary-color: #f3dae8;
 $primary-color-dark: #e1a3c6;
-$button-padding: 10px 20px;
+$button-padding: 10px 18px;
 $button-border-radius: 5px;
 $button-font-size: 1.2rem;
 $button-font-weight: 600;
@@ -59,7 +59,9 @@ $button-text-color-dark: #934270;
 }
 
 #profile-tab,
-#home-tab {
+#home-tab,
+#map-tab {
   border-radius: 25%;
   margin-bottom: 5px;
+
 }
