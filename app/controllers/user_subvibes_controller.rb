@@ -13,7 +13,7 @@ class UserSubvibesController < ApplicationController
   def destroy
     @usersubvibe = UserSubvibe.find(params[:id])
     @usersubvibe.destroy
-    redirect_to my_profile_path, notice: 'subvibe deleted'
+    redirect_to my_profile_path, notice: 'vibe removed'
   end
 
   private

@@ -28,7 +28,7 @@
 
       <div class="pb-4 grid-subvibes-container">
         <% if @user.all_favorites.count > 0 %>
-          <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+          <div class="grid-subvibes-style flex-wrap justify-content-center">
             <% @user.all_favorites.each do |bar| %>
               <div class="icon-card">
                 <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
@@ -45,7 +45,7 @@
     <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <div class="pb-4 grid-subvibes-container">
         <% if @user.subvibes.length > 0 %>
-          <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+          <div class="grid-subvibes-style flex-wrap justify-content-center">
             <% @user.user_subvibes.each do |user_subvibe| %>
               <div class="icon-card">
               <%= link_to "x", user_subvibe_path(user_subvibe), class: "subvibe-delete-btn", data: {turbo_method: :delete}%>

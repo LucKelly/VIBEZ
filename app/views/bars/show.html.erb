@@ -4,9 +4,9 @@
         <%= cl_image_tag @bar.photo.key, crop: :fill, class: "bar-image" %>
         <div class="bar-info-overlay d-flex">
           <div class="text-start">
-            <h2 class="header-font"><%= @bar.name %></h2>
-            <p class="paragraph-font price-font"><%= @bar.price %></p>
-            <p class="paragraph-font">Closes at <%= @bar.closing_time %>h</p>
+            <h2 class="header-font general-info-font"><%= @bar.name %></h2>
+            <p class="paragraph-font general-info-font"><%= @bar.price %></p>
+            <p class="paragraph-font general-info-font">Closes at <%= @bar.closing_time %>h</p>
           </div>
           <% if current_user.favorited?(@bar) %>
             <div>
@@ -44,7 +44,7 @@
 
       <div class="pb-4 grid-subvibes-container">
         <% if @bar.favoritors.count > 0 %>
-          <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+          <div class="grid-subvibes-style flex-wrap justify-content-center">
             <% @bar.favoritors.each do |user| %>
               <div class="avatar-card">
                 <%= cl_image_tag user.photo.key, class: "avatar-img" %>
@@ -64,7 +64,7 @@
     <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
         <div class="pb-4 grid-subvibes-container">
           <% if @bar.subvibes.length > 0 %>
-            <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+            <div class="grid-subvibes-style flex-wrap justify-content-center">
               <% @bar.subvibes.each do |subvibe| %>
                 <% if current_user.subvibes.include?(subvibe) %>
                   <div class="icon-card selected-icon">
@@ -85,5 +85,5 @@
         </div>
     </div>
   </div>
-    <%= link_to "Take me there!", @query_encode, class: "main-btn redirect-button-margin", target: "_blank" %>
+    <%= link_to "Take me there!", @query_encode, class: "main-btn redirect-button-margin fix-btn-bottom", target: "_blank" %>
 </div>

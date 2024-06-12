@@ -2,7 +2,7 @@
   <div>
     <h1 class="profile-name"><%= @user.username%></h1>
   </div>
-  
+
   <div class="profile-page-avatar">
     <%= cl_image_tag @user.photo.key, class: "profile-avatar-img" %>
   </div>
@@ -25,7 +25,7 @@
 
       <div class="pb-4 grid-subvibes-container">
         <% if @user.all_favorites.count > 0 %>
-          <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+          <div class="grid-subvibes-style flex-wrap justify-content-center">
             <% @user.all_favorites do |bar| %>
               <% if current_user.all_favorites.include?(bar) %>
                 <div class="icon-card selected-icon">
@@ -49,7 +49,7 @@
     <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <div class="pb-4 grid-subvibes-container">
         <% if @user.subvibes.length > 0 %>
-          <div class="grid-subvibes-style d-flex flex-wrap justify-content-center">
+          <div class="grid-subvibes-style flex-wrap justify-content-center">
             <% @user.subvibes.each do |subvibe| %>
               <% if current_user.subvibes.include?(subvibe) %>
                 <div class="icon-card selected-icon">
