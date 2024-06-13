@@ -24,25 +24,26 @@
     <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
       <div class="pb-4 grid-subvibes-container">
-        <% if @user.all_favorites.count > 0 %>
+        <% if @user.all_favorited.count > 0 %>
           <div class="grid-subvibes-style flex-wrap justify-content-center">
-            <% @user.all_favorites do |bar| %>
-              <% if current_user.all_favorites.include?(bar) %>
-                <div class="icon-card selected-icon">
-                  <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
-                  <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
-                </div>
-              <% else %>
-                <div class="icon-card">
-                  <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
-                  <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
-                </div>
-              <% end %>
-            <% end %>
+        <% @user.all_favorited.each do |bar| %>
+          <% if current_user.all_favorited.include?(bar) %>
+            <div class="icon-card selected-icon">
+          <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
+          <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
+            </div>
+          <% else %>
+            <div class="icon-card">
+          <i class="fa-solid fa-martini-glass-citrus fa-3x"></i>
+          <%= link_to bar.name, bar_path(bar.id), class: "link-text" %>
+            </div>
+          <% end %>
+        <% end %>
           </div>
         <% else %>
           <h2 class="paragraph-font">This viber doesn't have favorites yet!</h2>
         <% end %>
+      </div>
       </div>
 
     </div>
