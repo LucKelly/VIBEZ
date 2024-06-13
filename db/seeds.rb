@@ -304,7 +304,7 @@ cockpit_quiosque = Bar.create!(name: "Cockpit quiosque", price: "€", opening_t
 cockpit_quiosque.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
 fadarious_bar = Bar.create!(name: "Fadarius", price: "€", opening_time: 11, closing_time: 20, address: "Rua Antero de Figueiredo 6F, Lisboa")
 fadarious_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675246/adam-jaime-dmkmrNptMpw-unsplash_qhrh9x.jpg'), filename: 'principe_real.jpg')
-my_house_alvalade = Bar.create!(name: "My house Alvalade", price: "€", opening_time: 11, closing_time: 20, address: "Rua Conde Sabugosa 11 D, Lisboa")
+my_house_alvalade = Bar.create!(name: "My House Alvalade", price: "€€", opening_time: 11, closing_time: 00, address: "Rua Conde Sabugosa 11 D, Lisboa")
 my_house_alvalade.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675246/adam-jaime-dmkmrNptMpw-unsplash_qhrh9x.jpg'), filename: 'principe_real.jpg')
 torto_bistro_bar = Bar.create!(name: "Torto Bistro Bar", price: "€", opening_time: 11, closing_time: 20, address: " Rua Antero de Figueiredo 16D, Lisboa")
 torto_bistro_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
@@ -324,8 +324,8 @@ BarSubvibe.create!(bar: mama_shelter_lisboa, subvibe: pints_pub)
 BarSubvibe.create!(bar: mama_shelter_lisboa, subvibe: seating_pub)
 
 BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: pints_pub)
-BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: pints_pub)
-BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: pints_pub)
+BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: games_sports)
+BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: cocktails_pub)
 
 
 BarSubvibe.create!(bar: torto_bistro_bar, subvibe: pints_pub)
@@ -384,7 +384,7 @@ BarSubvibe.create!(bar:  boa_vista, subvibe: cocktails_boogie)
 BarSubvibe.create!(bar:  boa_vista, subvibe: pints_boogie)
 BarSubvibe.create!(bar:  boa_vista, subvibe: ambient_music_trendy)
 
-BarSubvibe.create!(bar:  british_bar_lisboa, subvibe:pints_pub)
+BarSubvibe.create!(bar:  british_bar_lisboa, subvibe: pints_pub)
 BarSubvibe.create!(bar:  british_bar_lisboa, subvibe: tapas_intimate)
 BarSubvibe.create!(bar:  british_bar_lisboa, subvibe: seating_pub)
 
@@ -415,7 +415,7 @@ puts "#{sneaky_sip.subvibes.last}"
 
 
 BarSubvibe.create!(bar:  my_house_alvalade, subvibe: dj_music_boogie)
-BarSubvibe.create!(bar:  my_house_alvalade, subvibe: cocktails_boogie)
+BarSubvibe.create!(bar:  my_house_alvalade, subvibe: cocktails_trendy)
 BarSubvibe.create!(bar:  my_house_alvalade, subvibe: pints_boogie)
 
 puts "#{my_house_alvalade.subvibes.last}"
@@ -475,7 +475,6 @@ BarSubvibe.create!(bar:  principe_real, subvibe:  seating_intimate)
 
 BarSubvibe.create!(bar:  pavilhao_chines, subvibe:  cocktails_intimate)
 BarSubvibe.create!(bar:  pavilhao_chines, subvibe:  seating_intimate)
-BarSubvibe.create!(bar:  pavilhao_chines, subvibe:  seating_pub)
 
 BarSubvibe.create!(bar:  v_rooftop, subvibe:  cocktails_trendy)
 BarSubvibe.create!(bar:  v_rooftop, subvibe:  seating_boogie)
@@ -484,16 +483,15 @@ BarSubvibe.create!(bar:  v_rooftop, subvibe:  ambient_music_pub)
 
 puts 'Creating subvibes for all users'
 
-UserSubvibe.create!(user: luc,subvibe: kareoke_boogie)
-UserSubvibe.create!(user: luc,subvibe: cocktails_intimate)
-UserSubvibe.create!(user: luc,subvibe: dancefloor_trendy)
-UserSubvibe.create!(user: luc,subvibe: games_pub)
-UserSubvibe.create!(user: luc,subvibe: pints_pub)
+UserSubvibe.create!(user: luc,subvibe: kareoke_trendy)
+UserSubvibe.create!(user: luc,subvibe: cocktails_trendy)
+UserSubvibe.create!(user: luc,subvibe: dj_music_boogie)
+UserSubvibe.create!(user: luc,subvibe: games_sports)
 
-UserSubvibe.create!(user: jonas,subvibe: western_pub)
-UserSubvibe.create!(user: jonas,subvibe: cocktails_boogie)
-UserSubvibe.create!(user: jonas,subvibe: ambient_music_intimate)
-UserSubvibe.create!(user: jonas,subvibe: live_music_pub)
+UserSubvibe.create!(user: jonas,subvibe: dj_music_boogie)
+UserSubvibe.create!(user: jonas,subvibe: outside_trendy)
+UserSubvibe.create!(user: jonas,subvibe: tapas_pub)
+UserSubvibe.create!(user: jonas,subvibe: speakeasy_pub)
 
 UserSubvibe.create!(user: feline, subvibe: seating_boogie)
 UserSubvibe.create!(user: feline, subvibe: ambient_music_pub)
@@ -513,5 +511,13 @@ UserSubvibe.create!(user: jeff,subvibe: ambient_music_pub)
 UserSubvibe.create!(user: jeff,subvibe: games_pub)
 UserSubvibe.create!(user: jeff,subvibe: kareoke_trendy)
 
+puts 'creating 10 favourites for all users'
+User.all.each do |user|
+  5.times do
+    bar = Bar.all.sample
+    user.favorite(bar)
+  end
+end
+jonas.favorite(my_house_alvalade)
 
 puts 'Done!'
