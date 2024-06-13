@@ -1,9 +1,10 @@
 <div class="session-container">
-  <div class="session-container d-flex flex-column justify-content-center align-items-center gap-2 text-center">
-    <h2 class="header-log-in">Log in</h2>
+  <div class="session-container d-flex flex-column justify-content-center align-items-center gap-0.5 text-center">
+    <h2 class="header-font log-in">Log in</h2>
     <br>
+    <div class = "log-in-form">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
+      <div class="paragraph-font form-inputs">
         <%# <%= f.input :username,
                     required: false,
                     autofocus: true,
@@ -20,9 +21,9 @@
 
       <div class="form-actions d-flex justify-content-center gap-3">
         <button href="#" class="main-btn"> <%= f.button :submit, "Log in" %></button>
-        <button href="#" class="main-btn"> <%= link_to "Back", root_path %> </button>
-      </div>
+        </div>
+        <br>
+   <%= link_to "Sign up", new_user_registration_path, class: "main-btn" %>
     <% end %>
-    <%= link_to "Sign up", new_user_registration_path, class: "main-btn" %>
   </div>
 </div>

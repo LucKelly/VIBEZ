@@ -13,10 +13,10 @@
 .button-sign-up {
   align-items: center;
   background-color: #fee6e3;
-  border: 2px solid #111;
+  border: 2px solid #956580;
   border-radius: 8px;
   box-sizing: border-box;
-  color: #111;
+  color: #956580;
   cursor: pointer;
   display: flex;
   font-family: Inter,sans-serif;
@@ -35,7 +35,7 @@
 }
 
 .button-sign-up:after {
-  background-color: #111;
+  background-color: #956580;
   border-radius: 8px;
   content: "";
   display: block;
@@ -86,4 +86,8 @@
 
 .header-sign-up{
   color: white;
+}
+
+.sign-up-form {
+  max-width:300px;
 }
