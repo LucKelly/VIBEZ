@@ -6,7 +6,17 @@
           <div class="text-start">
             <h2 class="header-font general-info-font"><%= @bar.name %></h2>
             <p class="paragraph-font general-info-font"><%= @bar.price %></p>
-            <p class="paragraph-font general-info-font">Closes at <%= @bar.closing_time %>h</p>
+            <%# TODO style the bar-opening-time class with flex direction row,
+            spacing between the 2 p elements with it all lined up to the left of the overlay div DELETE ME %>
+            <div class="bar-opening-time">
+              <%# do i need the general-info-font class on this p tag?  DELETE ME%>
+              <% if DateTime.now.hour > @bar.closing_time %>
+                <button class="closed-btn">Closed</button>
+              <% else %>
+                <button class="open-btn">Open</button>
+              <% end %>
+              <p class="paragraph-font general-info-font">| Closes at <%= @bar.closing_time %>h</p>
+            </div>
           </div>
           <% if current_user.favorited?(@bar) %>
             <div>

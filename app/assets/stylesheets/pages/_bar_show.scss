@@ -101,7 +101,7 @@
   background-color: rgba(230, 230, 230, 0.5);
   border-radius: 10%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   padding: 10px;
@@ -114,7 +114,8 @@
   color: #3D2148;
   text-align: center;
   position: relative;
-  max-height: 92px;
+  min-height: 120px;
+  max-height: 120px;
 }
 
 
@@ -156,6 +157,8 @@
 
 .general-info-font {
   text-align: left !important;
+  margin-bottom: 6px !important;
+  // margin-top: 0px !important;
 }
 
 
@@ -173,4 +176,54 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bar-opening-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.open-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: black;
+  border: solid;
+  border-color: #1c941c;
+  border-radius: 30%;
+  background-color: #1c941c;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 10px;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.closed-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: black;
+  border: solid;
+  border-color: #cc0b0b;
+  border-radius: 30%;
+  background-color: #cc0b0b;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 10px;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.text-start {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
 }
