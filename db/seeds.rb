@@ -434,7 +434,7 @@ BarSubvibe.create!(bar:  corkies, subvibe:  dj_music_boogie)
 BarSubvibe.create!(bar:  zeinot_bar, subvibe:  games_pub)
 BarSubvibe.create!(bar:  zeinot_bar, subvibe:  tapas_pub)
 BarSubvibe.create!(bar:  zeinot_bar, subvibe:  pints_sports)
-BarSubvibe.create!(bar:  zeinot_bar, subvibe:  games_sports)
+
 
 BarSubvibe.create!(bar:  bar_1143, subvibe:  outside_intimate)
 BarSubvibe.create!(bar:  bar_1143, subvibe:  seating_intimate)
