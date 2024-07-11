@@ -28,7 +28,6 @@ jeff = User.create!(username: "JazzyJeff123", email: "jj@test.com", password: "p
 jeff.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670504/020-woman-2_mllshs.png'), filename: 'woman2.jpg')
 
 
-
 puts 'Creating 5 outside subvibes'
 outside_trendy = Subvibe.create!(name: "outside", main_vibe: "trendy")
 outside_trendy.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670492/001-sun_zchdhi.png'), filename: 'outsidetrendy.jpg')
@@ -235,283 +234,101 @@ kareoke_sports = Subvibe.create!(name: "kareoke", main_vibe: "sports")
 kareoke_sports.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717670500/014-karaoke_y2vpmx.png'), filename: 'kareoke_sports.jpg')
 
 puts 'Creating 20 bars'
-sneaky_sip = Bar.create!(name: "Sneaky Sip", price: "€", opening_time: 11, closing_time: 23, address: "Travessa do Noronha 12, Lisboa")
+sneaky_sip = Bar.create!(name: "Sneaky Sip", price: "€", opening_time: 11, closing_time: 23, address: "10 Regal Close, London")
 sneaky_sip.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603849/sneaky_sip_nforib.jpg'), filename: 'sneakysip.jpg')
-oasis = Bar.create!(name: "Oasis", price: "€", opening_time: 11, closing_time: 23, address: "Rua Nova do Carvalho 48, Lisboa")
+oasis = Bar.create!(name: "Oasis", price: "€", opening_time: 11, closing_time: 23, address: "7 Station Street, London")
 oasis.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717604000/oasis_yqkwa6.jpg'), filename: 'oasis.jpg')
-copacabana = Bar.create!(name: "Copacabana", price: "€€", opening_time: 12, closing_time: 23, address: "Rua da Atalaia 91, Lisboa")
+copacabana = Bar.create!(name: "Copacabana", price: "€€", opening_time: 12, closing_time: 23, address: "Flat 76, Birchington House, Pembury Road, London")
 copacabana.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603789/cpacabana_fwogya.jpg'), filename: 'copacabana.jpg')
-boa_vista = Bar.create!(name: "Boa Vista", price: "€€€", opening_time: 14, closing_time: 24, address: "Rua da Boavista 16, Lisboa")
+boa_vista = Bar.create!(name: "Boa Vista", price: "€€€", opening_time: 14, closing_time: 24, address: "Apartment 5405, 1 Park Drive, London")
 boa_vista.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675816/helena-yankovska-7EbGkOm8pWM-unsplash_sxqk7z.jpg'), filename: 'boavista.jpg')
-java = Bar.create!(name: "Java", price: "€", opening_time: 12, closing_time: 23, address: "Praça Dom Luís I 30, Lisboa")
+java = Bar.create!(name: "Java", price: "€", opening_time: 12, closing_time: 23, address: "11 Falmouth Street, London")
 java.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675825/tai-s-captures-tebQPl7JgA8-unsplash_pon3pj.jpg'), filename: 'java.jpg')
-red_frog = Bar.create!(name: "Red Frog", price: "€€", opening_time: 12, closing_time: 22, address: "Praça da Alegria 66b, Lisboa")
+red_frog = Bar.create!(name: "Red Frog", price: "€€", opening_time: 12, closing_time: 22, address: "20 St Georges Road, London")
 red_frog.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675262/zero-take-2zimLZ7aDOM-unsplash_vb92dh.jpg'), filename: 'red_frog.jpg')
 
-cinco = Bar.create!(name: "Cinco", price: "€", opening_time: 13, closing_time: 23, address: "Rua dos Anjos 10, Lisboa")
+cinco = Bar.create!(name: "Cinco", price: "€", opening_time: 13, closing_time: 23, address: "Apartment 704, Catalina House, 4 Canter Way, London")
 cinco.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675261/theme-photos-kPHYuzqoaz0-unsplash_nlop0j.jpg'), filename: 'cinco.jpg')
-secret_garden = Bar.create!(name: "Secret Garden", price: "€€", opening_time: 11, closing_time: 20, address: "R.newton 13, Lisboa")
+secret_garden = Bar.create!(name: "Secret Garden", price: "€€", opening_time: 11, closing_time: 20, address: "37 Malvern Avenue, London")
 secret_garden.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675259/steve-allison-LRx-y4bRdMA-unsplash_aivdwx.jpg'), filename: 'secret_garden.jpg')
-uni_cocktail = Bar.create!(name: "Uni Cocktail", price: "€", opening_time: 11, closing_time: 20, address: "Rua de O Século 204, Lisboa")
+uni_cocktail = Bar.create!(name: "Uni Cocktail", price: "€", opening_time: 11, closing_time: 20, address: "34 Queens Road, Walthamstow")
 uni_cocktail.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675257/stanislav-ivanitskiy-j5SwUbcgeyA-unsplash_gszbxb.jpg'), filename: 'uni_cocktail.jpg')
-park_bar = Bar.create!(name: "Park Rooftop", price: "€", opening_time: 11, closing_time: 20, address: "Rua de Arroios 17, Lisboa")
+park_bar = Bar.create!(name: "Park Rooftop", price: "€", opening_time: 11, closing_time: 20, address: "30 Carmen Street, London")
 park_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675255/nikola-jovanovic-QGPmWrclELg-unsplash_bdl25y.jpg'), filename: 'park_bar.jpg')
-the_couch = Bar.create!(name: "The Couch", price: "€€€", opening_time: 11, closing_time: 20, address: "Rua de Arroios 156, Lisboa")
+the_couch = Bar.create!(name: "The Couch", price: "€€€", opening_time: 11, closing_time: 20, address: "712C Lea Bridge Road, London")
 the_couch.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675255/sergio-alves-santos-PeDrafNlY2Y-unsplash_wz5bfe.jpg'), filename: 'the_couch.jpg')
-lisboario = Bar.create!(name: "Lisboario", price: "€€", opening_time: 11, closing_time: 20, address: "Rua de arroios nº60 A, Lisboa")
+lisboario = Bar.create!(name: "Lisboario", price: "€€", opening_time: 11, closing_time: 20, address: "5 Belle Vue Road, London")
 lisboario.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675248/denys-nevozhai-LVuwYF-7POM-unsplash_ff8opv.jpg'), filename: 'lisboario.jpg')
-ogilins_irish_pub = Bar.create!(name: "Ogilins Irish Pub", price: "€", opening_time: 11, closing_time: 20, address: "Rua dos Remolares 8, Lisboa")
+ogilins_irish_pub = Bar.create!(name: "Ogilins Irish Pub", price: "€", opening_time: 11, closing_time: 20, address: "27 Leather Gardens, London")
 ogilins_irish_pub.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675248/edward-howell-55bQ7g3ZlQU-unsplash_omrdjs.jpg'), filename: 'ogilins_irish_pub.jpg')
-british_bar_lisboa = Bar.create!(name: "British Bar Lisboa", price: "€€", opening_time: 11, closing_time: 20, address: "Rua Bernardino Costa 52, Lisboa")
+british_bar_lisboa = Bar.create!(name: "British Bar Lisboa", price: "€€", opening_time: 11, closing_time: 20, address: "Flat 7, Linnell House, 50 Folgate Street, London")
 british_bar_lisboa.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675248/clem-onojeghuo-zlABb6Gke24-unsplash_rqqxvo.jpg'), filename: 'british_bar_lisboa.jpg')
-the_queen_ale = Bar.create!(name: "The Queen Ale", price: "€€€", opening_time: 11, closing_time: 20, address: "Rua de Arroios 58c, Lisboa")
+the_queen_ale = Bar.create!(name: "The Queen Ale", price: "€€€", opening_time: 11, closing_time: 20, address: "35 Beauchamp Road, London")
 the_queen_ale.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675248/carson-masterson-yuxr5ohFB-g-unsplash_lwxrty.jpg'), filename: 'the_queen_ale.jpg')
 
-sky_bar = Bar.create!(name: "Sky Bar", price: "€", opening_time: 11, closing_time: 20, address: "Avenida da Liberdade 185, Lisboa")
+sky_bar = Bar.create!(name: "Sky Bar", price: "€", opening_time: 11, closing_time: 20, address: "Flat 503, Dress Makers House, 20 Blair Street, London")
 sky_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675247/aleksandr-popov-3-Kh6XSu9XQ-unsplash_trrnfo.jpg'), filename: 'sky_bar.jpg')
-a_capela = Bar.create!(name: "A Capela", price: "€€", opening_time: 11, closing_time: 20, address: "Rua da Atalaia 45, Lisboa")
+a_capela = Bar.create!(name: "A Capela", price: "€€", opening_time: 11, closing_time: 20, address: "Car Park, Snaresbrook Station, Station Approach, Wanstead")
 a_capela.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675247/adam-wilson-6UIonphZA5o-unsplash_mmc3dh.jpg'), filename: 'a_capela.jpg')
-principe_real = Bar.create!(name: "Principe Real", price: "€", opening_time: 11, closing_time: 20, address: "Rua Dom Pedro V 56 J, Lisboa")
+principe_real = Bar.create!(name: "Principe Real", price: "€", opening_time: 11, closing_time: 20, address: "13 Holborn Road, London")
 principe_real.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675246/adam-jaime-dmkmrNptMpw-unsplash_qhrh9x.jpg'), filename: 'principe_real.jpg')
-pavilhao_chines = Bar.create!(name: "Pavilhao Chines", price: "€€", opening_time: 11, closing_time: 20, address: "Rua Dom Pedro V 89, Lisboa")
+pavilhao_chines = Bar.create!(name: "Pavilhao Chines", price: "€€", opening_time: 11, closing_time: 20, address: "Flat 9, 440 North Woolwich Road, Silvertown")
 pavilhao_chines.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675247/aleksandr-popov-2GNBoMgKYEo-unsplash_nvs8dd.jpg'), filename: 'pavilhao.jpg')
-v_rooftop = Bar.create!(name: "V Rooftop", price: "€", opening_time: 11, closing_time: 20, address: "Rua Rodrigo da Fonseca 2, Lisboa")
+v_rooftop = Bar.create!(name: "V Rooftop", price: "€", opening_time: 11, closing_time: 20, address: "11 Cranbourne Avenue, London")
 v_rooftop.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
 
-big_T = Bar.create!(name: "Big T", price: "€€", opening_time: 13, closing_time: 23, address: "Rua dos Anjos 73, Lisboa")
+big_T = Bar.create!(name: "Big T", price: "€€", opening_time: 13, closing_time: 23, address: "Flat 4, Chestnut House, 37 Sycamore Avenue, London")
 big_T.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717603849/sneaky_sip_nforib.jpg'), filename: 'sneakysip.jpg')
-sailors_bar = Bar.create!(name: "Sailors Bar", price: "€", opening_time: 11, closing_time: 24, address: "Rua dos Anjos 73,15B, Lisboa")
+sailors_bar = Bar.create!(name: "Sailors Bar", price: "€", opening_time: 11, closing_time: 24, address: "Flat 21, Newton House, Cornwall Street, London")
 sailors_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675255/sergio-alves-santos-PeDrafNlY2Y-unsplash_wz5bfe.jpg'), filename: 'the_couch.jpg')
-bar_da_ucs = Bar.create!(name: "Bar da UCS", price: "€", opening_time: 11, closing_time: 23, address: "Avenida saõ joaõ de Deus 31B, Lisboa ")
+bar_da_ucs = Bar.create!(name: "Bar da UCS", price: "€", opening_time: 11, closing_time: 23, address: "Mill Lodge, Mill Lane, London")
 bar_da_ucs.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675248/clem-onojeghuo-zlABb6Gke24-unsplash_rqqxvo.jpg'), filename: 'british_bar_lisboa.jpg')
-cocas_place_bar = Bar.create!(name: "Cocas Place Bar", price: "€€", opening_time: 12, closing_time: 22, address: "R. Manuel Ferreira de Andrade 2, Lisboa")
+cocas_place_bar = Bar.create!(name: "Cocas Place Bar", price: "€€", opening_time: 12, closing_time: 22, address: "29 St Bartholomews Road, London")
 cocas_place_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675247/aleksandr-popov-3-Kh6XSu9XQ-unsplash_trrnfo.jpg'), filename: 'sky_bar.jpg')
-bar_1143 = Bar.create!(name: "Bar 1143", price: "€€", opening_time: 11, closing_time: 24, address: "Praça Alvalade 3C, Lisboa")
+bar_1143 = Bar.create!(name: "Bar 1143", price: "€€", opening_time: 11, closing_time: 24, address: "Flat 5, 81 Rainhill Way, London")
 bar_1143.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675246/adam-jaime-dmkmrNptMpw-unsplash_qhrh9x.jpg'), filename: 'principe_real.jpg')
-corkies = Bar.create!(name: "Corkies", price: "€€€", opening_time: 14, closing_time: 23, address: "Rua Joao saraiva 18, lisboa")
+corkies = Bar.create!(name: "Corkies", price: "€€€", opening_time: 14, closing_time: 23, address: "Flat 1, 1 Feather Mews, London")
 corkies.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
-zeinot_bar = Bar.create!(name: "Zeinot", price: "€", opening_time: 12, closing_time: 21, address: "Rua joao Saraiva 13 2, Lisboa")
+zeinot_bar = Bar.create!(name: "Zeinot", price: "€", opening_time: 12, closing_time: 21, address: "Flat 10, Gayton House, Chiltern Road, London")
 zeinot_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675247/aleksandr-popov-2GNBoMgKYEo-unsplash_nvs8dd.jpg'), filename: 'pavilhao.jpg')
-templarios_bar = Bar.create!(name: "Templarios", price: "€€", opening_time: 11, closing_time: 23, address: "Rua Flores do Lima 8, Lisboa")
+templarios_bar = Bar.create!(name: "Templarios", price: "€€", opening_time: 11, closing_time: 23, address: "Unit 8, 58 Bethnal Green Road, London")
 templarios_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675816/helena-yankovska-7EbGkOm8pWM-unsplash_sxqk7z.jpg'), filename: 'boavista.jpg')
-shisha_bar_lisboa = Bar.create!(name: "Shisha Bar Lisboa ", price: "€€", opening_time: 11, closing_time: 23, address: "Avenida Alm. Reis 78 loja a, Lisboa ")
+shisha_bar_lisboa = Bar.create!(name: "Shisha Bar Lisboa ", price: "€€", opening_time: 11, closing_time: 23, address: "3 Athlone Close, London ")
 shisha_bar_lisboa.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675816/helena-yankovska-7EbGkOm8pWM-unsplash_sxqk7z.jpg'), filename: 'boavista.jpg')
-mama_shelter_lisboa = Bar.create!(name: "Mama Shelter Lisboa", price: "€", opening_time: 11, closing_time: 23, address: "R. do Vale de Pereiro 19, Lisboa")
+mama_shelter_lisboa = Bar.create!(name: "Mama Shelter Lisboa", price: "€", opening_time: 11, closing_time: 23, address: "68 Coopers Close, London")
 mama_shelter_lisboa.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675248/clem-onojeghuo-zlABb6Gke24-unsplash_rqqxvo.jpg'), filename: 'british_bar_lisboa.jpg')
-balzac = Bar.create!(name: "Balzac", price: "€", opening_time: 11, closing_time: 20, address: "rua de arroios 156 1150-056 Lisboa")
+balzac = Bar.create!(name: "Balzac", price: "€", opening_time: 11, closing_time: 20, address: "10 Radley Square, London")
 balzac.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675257/stanislav-ivanitskiy-j5SwUbcgeyA-unsplash_gszbxb.jpg'), filename: 'uni_cocktail.jpg')
-cockpit_quiosque = Bar.create!(name: "Cockpit Quiosque", price: "€", opening_time: 11, closing_time: 20, address: "Avenida de Roma Frente 26B, Lisboa")
+cockpit_quiosque = Bar.create!(name: "Cockpit Quiosque", price: "€", opening_time: 11, closing_time: 20, address: "32 Richmond Avenue, London")
 cockpit_quiosque.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
-fadarious_bar = Bar.create!(name: "Fadarius", price: "€", opening_time: 11, closing_time: 20, address: "Rua Antero de Figueiredo 6F, Lisboa")
+fadarious_bar = Bar.create!(name: "Fadarius", price: "€", opening_time: 11, closing_time: 20, address: "535 Roman Road, London")
 fadarious_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675246/adam-jaime-dmkmrNptMpw-unsplash_qhrh9x.jpg'), filename: 'principe_real.jpg')
-my_house_alvalade = Bar.create!(name: "My House Alvalade", price: "€€", opening_time: 11, closing_time: 24, address: "Rua Conde Sabugosa 11 D, Lisboa")
+my_house_alvalade = Bar.create!(name: "My House Alvalade", price: "€€", opening_time: 11, closing_time: 24, address: "Flat 5, Firewatch Court, 2 Candle Street, London")
 my_house_alvalade.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675246/adam-jaime-dmkmrNptMpw-unsplash_qhrh9x.jpg'), filename: 'principe_real.jpg')
-torto_bistro_bar = Bar.create!(name: "Torto Bistro Bar", price: "€", opening_time: 11, closing_time: 20, address: " Rua Antero de Figueiredo 16D, Lisboa")
+torto_bistro_bar = Bar.create!(name: "Torto Bistro Bar", price: "€", opening_time: 11, closing_time: 20, address: "Flat 1, Riemann Court, 44 Bow Common Lane, London")
 torto_bistro_bar.photo.attach(io: URI.open('https://res.cloudinary.com/duq1bnalm/image/upload/v1717675845/louis-hansel-WCm4dFvZnMM-unsplash_covxn8.jpg'), filename: 'v_rooftop.jpg')
 
-puts 'Creating bar 29 subvibes'
 
-BarSubvibe.create!(bar:  oasis, subvibe: kareoke_boogie)
+puts 'Creating 3 bar subvibes for every bar'
 
-puts "#{oasis.subvibes.last}"
-
-BarSubvibe.create!(bar: fadarious_bar, subvibe: cocktails_intimate)
-BarSubvibe.create!(bar: fadarious_bar, subvibe: seating_intimate)
-BarSubvibe.create!(bar: fadarious_bar, subvibe: ambient_music_intimate)
-
-BarSubvibe.create!(bar: mama_shelter_lisboa, subvibe: cocktails_pub)
-BarSubvibe.create!(bar: mama_shelter_lisboa, subvibe: pints_pub)
-BarSubvibe.create!(bar: mama_shelter_lisboa, subvibe: seating_pub)
-
-BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: pints_pub)
-BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: games_sports)
-BarSubvibe.create!(bar: shisha_bar_lisboa, subvibe: cocktails_pub)
+Bar.all.each do |bar|
+  subvibes = Subvibe.all.shuffle
+  subvibes.first(3).each do |subvibe|
+    BarSubvibe.create!(bar: bar, subvibe: subvibe)
+  end
+end
 
 
-BarSubvibe.create!(bar: torto_bistro_bar, subvibe: pints_pub)
-BarSubvibe.create!(bar: torto_bistro_bar, subvibe: cocktails_pub)
-BarSubvibe.create!(bar: torto_bistro_bar, subvibe: seating_trendy)
+puts 'Creating 5 user subvibes for every user'
 
-BarSubvibe.create!(bar:  cockpit_quiosque, subvibe: tapas_boogie)
-BarSubvibe.create!(bar:  cockpit_quiosque, subvibe: seating_pub)
-BarSubvibe.create!(bar:  cockpit_quiosque, subvibe: pints_pub)
+User.all.each do |user|
+  subvibes = Subvibe.all.shuffle
+  subvibes.first(5).each do |subvibe|
+    UserSubvibe.create!(user: user, subvibe: subvibe)
+  end
+end
 
-BarSubvibe.create!(bar:  oasis, subvibe: cocktails_pub)
-BarSubvibe.create!(bar:  oasis, subvibe: pints_pub)
-BarSubvibe.create!(bar:  oasis, subvibe: games_sports)
-
-BarSubvibe.create!(bar:  copacabana, subvibe: tapas_intimate)
-BarSubvibe.create!(bar:  copacabana, subvibe: cocktails_intimate)
-BarSubvibe.create!(bar:  copacabana, subvibe: seating_intimate)
-
-BarSubvibe.create!(bar:  the_couch, subvibe: tapas_intimate)
-BarSubvibe.create!(bar:  the_couch, subvibe: cocktails_pub)
-BarSubvibe.create!(bar:  the_couch, subvibe: ambient_music_intimate)
-
-BarSubvibe.create!(bar:  park_bar, subvibe: seating_intimate)
-BarSubvibe.create!(bar:  park_bar, subvibe: tapas_trendy)
-BarSubvibe.create!(bar:  park_bar, subvibe: pints_pub)
-BarSubvibe.create!(bar:  park_bar, subvibe: outside_pub)
-
-BarSubvibe.create!(bar:  cinco, subvibe: cocktails_intimate)
-BarSubvibe.create!(bar:  cinco, subvibe: ambient_music_intimate)
-BarSubvibe.create!(bar:  cinco, subvibe: seating_intimate)
-
-BarSubvibe.create!(bar:  secret_garden, subvibe: dj_music_intimate)
-BarSubvibe.create!(bar:  secret_garden, subvibe: live_music_intimate)
-BarSubvibe.create!(bar:  secret_garden, subvibe: cocktails_intimate)
-BarSubvibe.create!(bar:  secret_garden, subvibe: kareoke_intimate)
-
-BarSubvibe.create!(bar:  balzac, subvibe: cocktails_intimate)
-BarSubvibe.create!(bar:  balzac, subvibe: seating_intimate)
-BarSubvibe.create!(bar:  balzac, subvibe: tapas_intimate)
-
-BarSubvibe.create!(bar:  uni_cocktail, subvibe: tropical_intimate)
-BarSubvibe.create!(bar:  uni_cocktail, subvibe: cocktails_boogie)
-BarSubvibe.create!(bar:  uni_cocktail, subvibe: seating_intimate)
-
-BarSubvibe.create!(bar:  lisboario, subvibe: seating_pub)
-BarSubvibe.create!(bar:  lisboario, subvibe: western_trendy)
-BarSubvibe.create!(bar:  lisboario, subvibe: cocktails_intimate)
-
-BarSubvibe.create!(bar:  red_frog, subvibe: cocktails_pub)
-BarSubvibe.create!(bar:  red_frog, subvibe: seating_intimate)
-BarSubvibe.create!(bar:  red_frog, subvibe: tapas_intimate)
-BarSubvibe.create!(bar:  red_frog, subvibe: pints_intimate)
-
-BarSubvibe.create!(bar:  boa_vista, subvibe: seating_boogie)
-BarSubvibe.create!(bar:  boa_vista, subvibe: cocktails_boogie)
-BarSubvibe.create!(bar:  boa_vista, subvibe: pints_boogie)
-BarSubvibe.create!(bar:  boa_vista, subvibe: ambient_music_trendy)
-
-BarSubvibe.create!(bar:  british_bar_lisboa, subvibe: pints_pub)
-BarSubvibe.create!(bar:  british_bar_lisboa, subvibe: tapas_intimate)
-BarSubvibe.create!(bar:  british_bar_lisboa, subvibe: seating_pub)
-
-BarSubvibe.create!(bar:  ogilins_irish_pub, subvibe: seating_pub)
-BarSubvibe.create!(bar:  ogilins_irish_pub, subvibe: cocktails_pub)
-BarSubvibe.create!(bar:  ogilins_irish_pub, subvibe: pints_intimate)
-BarSubvibe.create!(bar:  ogilins_irish_pub, subvibe: tapas_intimate)
-
-BarSubvibe.create!(bar:  java, subvibe:  pints_pub)
-BarSubvibe.create!(bar:  java, subvibe:  tapas_sports)
-BarSubvibe.create!(bar:  java, subvibe:  seating_intimate)
-BarSubvibe.create!(bar:  java, subvibe:  games_sports)
-
-puts "#{java.subvibes.last}"
-
-BarSubvibe.create!(bar:  the_queen_ale, subvibe: games_pub)
-BarSubvibe.create!(bar:  the_queen_ale, subvibe: pints_boogie)
-BarSubvibe.create!(bar:  the_queen_ale, subvibe: seating_intimate)
-
-puts "#{the_queen_ale.subvibes.last}"
-
-BarSubvibe.create!(bar:  sneaky_sip, subvibe:  dj_music_boogie)
-BarSubvibe.create!(bar:  sneaky_sip, subvibe:  tropical_intimate)
-BarSubvibe.create!(bar:  sneaky_sip, subvibe:  tapas_sports)
-BarSubvibe.create!(bar:  sneaky_sip, subvibe:  dancefloor_trendy)
-
-puts "#{sneaky_sip.subvibes.last}"
-
-
-BarSubvibe.create!(bar:  my_house_alvalade, subvibe: dj_music_boogie)
-BarSubvibe.create!(bar:  my_house_alvalade, subvibe: cocktails_trendy)
-BarSubvibe.create!(bar:  my_house_alvalade, subvibe: pints_boogie)
-
-puts "#{my_house_alvalade.subvibes.last}"
-
-BarSubvibe.create!(bar:  templarios_bar, subvibe:  dj_music_boogie)
-BarSubvibe.create!(bar:  templarios_bar, subvibe:  rooftop_pub)
-BarSubvibe.create!(bar:  templarios_bar, subvibe:  outside_trendy)
-BarSubvibe.create!(bar:  templarios_bar, subvibe:  live_music_trendy)
-
-BarSubvibe.create!(bar:  corkies, subvibe:  seating_pub)
-BarSubvibe.create!(bar:  corkies, subvibe:  cocktails_intimate)
-BarSubvibe.create!(bar:  corkies, subvibe:  live_music_pub)
-BarSubvibe.create!(bar:  corkies, subvibe:  tapas_trendy)
-BarSubvibe.create!(bar:  corkies, subvibe:  dj_music_boogie)
-
-BarSubvibe.create!(bar:  zeinot_bar, subvibe:  games_pub)
-BarSubvibe.create!(bar:  zeinot_bar, subvibe:  tapas_pub)
-BarSubvibe.create!(bar:  zeinot_bar, subvibe:  pints_sports)
-
-
-BarSubvibe.create!(bar:  bar_1143, subvibe:  outside_intimate)
-BarSubvibe.create!(bar:  bar_1143, subvibe:  seating_intimate)
-BarSubvibe.create!(bar:  bar_1143, subvibe:  cocktails_intimate)
-BarSubvibe.create!(bar:  bar_1143, subvibe:  dj_music_intimate)
-
-BarSubvibe.create!(bar:  big_T, subvibe:  pints_intimate)
-BarSubvibe.create!(bar:  big_T, subvibe:  games_pub)
-BarSubvibe.create!(bar:  big_T, subvibe:  tapas_pub)
-
-BarSubvibe.create!(bar:  cocas_place_bar, subvibe:  outside_boogie)
-BarSubvibe.create!(bar:  cocas_place_bar, subvibe:  dj_music_boogie)
-BarSubvibe.create!(bar:  cocas_place_bar, subvibe:  live_music_boogie)
-BarSubvibe.create!(bar:  cocas_place_bar, subvibe:  seating_boogie)
-
-BarSubvibe.create!(bar:  sailors_bar, subvibe:  outside_pub)
-BarSubvibe.create!(bar:  sailors_bar, subvibe:  tropical_boogie)
-BarSubvibe.create!(bar:  sailors_bar, subvibe:  cocktails_trendy)
-BarSubvibe.create!(bar:  sailors_bar, subvibe:  live_music_trendy)
-
-BarSubvibe.create!(bar:  bar_da_ucs, subvibe:  dancefloor_boogie)
-BarSubvibe.create!(bar:  bar_da_ucs, subvibe:  live_music_trendy)
-BarSubvibe.create!(bar:  bar_da_ucs, subvibe:  tapas_trendy)
-BarSubvibe.create!(bar:  bar_da_ucs, subvibe:  seating_trendy)
-
-BarSubvibe.create!(bar:  sky_bar, subvibe:  cocktails_intimate)
-BarSubvibe.create!(bar:  sky_bar, subvibe:  seating_intimate)
-BarSubvibe.create!(bar:  sky_bar, subvibe:  rooftop_boogie)
-
-BarSubvibe.create!(bar:  a_capela, subvibe:  cocktails_intimate)
-BarSubvibe.create!(bar:  a_capela, subvibe:  dj_music_intimate)
-BarSubvibe.create!(bar:  a_capela, subvibe:  live_music_intimate)
-BarSubvibe.create!(bar:  a_capela, subvibe:  ambient_music_pub)
-
-BarSubvibe.create!(bar:  principe_real, subvibe:  ambient_music_intimate)
-BarSubvibe.create!(bar:  principe_real, subvibe:  cocktails_intimate)
-BarSubvibe.create!(bar:  principe_real, subvibe:  seating_intimate)
-
-BarSubvibe.create!(bar:  pavilhao_chines, subvibe:  cocktails_intimate)
-BarSubvibe.create!(bar:  pavilhao_chines, subvibe:  seating_intimate)
-
-BarSubvibe.create!(bar:  v_rooftop, subvibe:  cocktails_trendy)
-BarSubvibe.create!(bar:  v_rooftop, subvibe:  seating_boogie)
-BarSubvibe.create!(bar:  v_rooftop, subvibe:  rooftop_boogie)
-BarSubvibe.create!(bar:  v_rooftop, subvibe:  ambient_music_pub)
-
-puts 'Creating subvibes for all users'
-
-UserSubvibe.create!(user: luc,subvibe: kareoke_trendy)
-UserSubvibe.create!(user: luc,subvibe: cocktails_trendy)
-UserSubvibe.create!(user: luc,subvibe: dj_music_boogie)
-UserSubvibe.create!(user: luc,subvibe: games_sports)
-
-UserSubvibe.create!(user: jonas,subvibe: dj_music_boogie)
-UserSubvibe.create!(user: jonas,subvibe: outside_trendy)
-UserSubvibe.create!(user: jonas,subvibe: tapas_pub)
-UserSubvibe.create!(user: jonas,subvibe: speakeasy_pub)
-
-UserSubvibe.create!(user: feline, subvibe: seating_boogie)
-UserSubvibe.create!(user: feline, subvibe: ambient_music_pub)
-UserSubvibe.create!(user: feline, subvibe: dancefloor_pub)
-UserSubvibe.create!(user: feline, subvibe: cocktails_pub)
-
-
-UserSubvibe.create!(user: aureo, subvibe: dj_music_boogie)
-UserSubvibe.create!(user: aureo, subvibe: speakeasy_sports)
-UserSubvibe.create!(user: aureo, subvibe: ambient_music_trendy)
-UserSubvibe.create!(user: aureo, subvibe: games_sports)
-UserSubvibe.create!(user: aureo, subvibe: live_music_intimate)
-
-UserSubvibe.create!(user: jeff,subvibe: tapas_sports)
-UserSubvibe.create!(user: jeff,subvibe: speakeasy_trendy)
-UserSubvibe.create!(user: jeff,subvibe: ambient_music_pub)
-UserSubvibe.create!(user: jeff,subvibe: games_pub)
-UserSubvibe.create!(user: jeff,subvibe: kareoke_trendy)
-
-puts 'creating 10 favourites for all users'
+puts 'creating 5 favourites for all users'
 User.all.each do |user|
   5.times do
     bar = Bar.all.sample
