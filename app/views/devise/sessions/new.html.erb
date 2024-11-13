@@ -3,6 +3,7 @@
     <h2 class="log-in header-font">Log in</h2>
     <br>
     <div class = "log-in-form">
+
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="paragraph-font form-inputs">
         <%# <%= f.input :username,
@@ -27,3 +28,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render "devise/shared/links" %>
