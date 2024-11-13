@@ -3,11 +3,10 @@
     <h2 class="sign-up header-font">Sign up</h2>
     <br>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
     <div class = "sign-up-form">
       <div class="paragraph-font form-inputs">
         <%= f.input :username,
-                    required: false,
+                    required: true,
                     autofocus: true,
                     input_html: { autocomplete: "username", class: "transparent-input"} %>
         <%= f.input :email,
@@ -21,6 +20,11 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password", class: "transparent-input" } %>
+        <%= f.input :photo,
+                    required: true,
+                    as: :file,
+                    input_html: {class: "transparent-input" },
+                    label: "Upload your Avatar!" %>
     </div>
 
     <div class=" button container form-actions d-flex justify-content-center gap-3">
