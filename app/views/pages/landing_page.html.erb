@@ -1,5 +1,25 @@
 <div class="landing-container d-flex flex-column justify-content-center align-items-center gap-3 text-center">
+    <div class="d-none d-md-block">
+      <div class="mobile-first" >
+        <h4>👋 Vibez's design is optimised for mobile! </h4>
+        <br>
+        <p> Try logging on with your phone (or, use Inspect Element on your browser). <strong> Thank you!</strong> 💖 </p>
+      </div>
+    </div>
+
     <h1 class="title-landing">vibez</h1>
+  <div class="d-flex flex-column gap-3">
+    <div class= "paragraph-font">
+      <p> find bars that suit your vibe</p>
+    </div>
+
+
+    <%= link_to "Find Your Vibe!", new_user_session_path, class: "main-btn homepage-main" %>
+
+
+  </div>
+</div>
+
     <%# <div class="sun-div">
       <%= image_tag("001-sun.png", class: "icon-picture") %>
     <%# </div> %>
@@ -40,17 +60,8 @@
     <%= image_tag("013-cowboy.png", class: "icon-picture") %>
   <%# </div> %>
   <%# <div class="karaoke-div"> %>
-      <%# <%= image_tag("014-karaoke.png", class: "icon-picture") %> 
+      <%# <%= image_tag("014-karaoke.png", class: "icon-picture") %>
   <%# </div> %>
   <%# <div class="ambiente-div">
       <%= image_tag("015-romantic-music.png", class: "icon-picture") %>
   <%# </div> %>
-  <div class="d-flex flex-column gap-3">
-    <div class= "paragraph-font">
-      <p> find bars that suit your vibe</p>
-    </div>
-
-    <%= link_to "Find Your Vibe!", new_user_session_path, class: "main-btn homepage-main" %>
-
-  </div>
-</div>
