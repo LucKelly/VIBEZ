@@ -12,7 +12,7 @@
 
 
   <body>
-  <%# unless statement to prevent navbar from rendering on landing page and log-in/sign-up -- navbar needs current_user data to sign in %>
+  <%# preventing navbar from rendering on landing page and log-in/sign-up%>
     <% unless (params[:controller] == "pages" && params[:action] == "landing_page") || (params[:controller].include?("devise") && params[:action] == "new") || (params[:controller].include?("devise") && params[:action] == "create")%>
         <%= render "shared/navbar" %>
     <%end %>
