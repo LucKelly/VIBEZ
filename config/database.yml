@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: vibez_production
   username: vibez
   password: <%= ENV["VIBEZ_DATABASE_PASSWORD"] %>
